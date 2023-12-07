@@ -1,7 +1,7 @@
 +++
 title = "Happy pride! I'm trans!"
 [taxonomies]
-tags = [ "thoughts" ]
+tags = [ "thoughts", "transgender" ]
 +++
 
 Hi, my name is JT. And I'm trans. Let's talk about it!

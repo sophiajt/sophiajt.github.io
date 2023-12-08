@@ -4,11 +4,11 @@ title = "Becoming Sophia"
 tags = [ "transgender" ]
 +++
 
-I started thinking this year what a "Year in Review" might look like, but to be honest, I've had one bright theme running through it that I kept coming back to: being trans. This post then, will be some reflections of the year with that in mind.
+I started thinking this year what a "Year in Review" might look like, but to be honest, I've had one bright theme running through it that I kept coming back to: being trans. This post then will be some reflections of the year with that in mind.
 
 ## Getting clean
 
-The year started off with me realising I had a [massive YouTube addiction](../youtube-addiction) and facing it head-on. This help me put to rest a struggle I'd had for 12 years. I could tell that I'd been using the addiction to numb something painful, but since I kept numbing, I wasn't able to figure out what it was.
+The year started off with me realising I had a [massive YouTube addiction](../youtube-addiction) and facing it head-on. This helped me put to rest a struggle I'd had for 12 years. I could tell that I'd been using the addiction to numb something painful, but since I kept numbing, I wasn't able to figure out what it was.
 
 My goal after getting clean was to figure out what I'd been so desperate to numb.
 

@@ -4,7 +4,7 @@ title = "YouTube Addiction"
 tags = [ "thoughts" ]
 +++
 
-Hi, my name is JT. I'm a YouTube addict.
+Hi, I'm a YouTube addict.
 
 I know what you're thinking. That sounds like a joke. That you want a funny punchline to go with it. Me too.
 
@@ -64,7 +64,7 @@ I don't want to lose the audience I'm building, but I also want to be healthy. I
 
 I think about other things, too, like "How will I fill my days if I stop"? I honestly don't know. It's scary to think about having a hole and not being able to fill it with that comfortable "zoning out" feeling.
 
-I'm sure some folks are thinking "what if you just limit yourself to 30 minutes a day?" 
+I'm sure some folks are thinking "what if you just limit yourself to 30 minutes a day?"
 
 That's just it. If I could do that, I would have.
 

@@ -120,7 +120,7 @@ Let's talk about exit codes. Actually, wait, I [already did that](https://www.jn
 
 Sure - we all still use 8-bit machines while flipping through a manual we printed trying to find the exit code description to understand why a command failed.
 
-I hear you: "but jt, look, it doesn't matter how archaic this stuff is, if we all agree to use it things keep working."
+I hear you: "but, look, it doesn't matter how archaic this stuff is, if we all agree to use it things keep working."
 
 I dunno - these arguments just don't hold up. We'd still be using C as our main systems language because it's the most documented, most portable, etc. But, by and large, we don't. We're increasingly choosing other languages.
 
@@ -176,7 +176,7 @@ for i in 1..10 {
 }
 ```
 
-(_aside: "but jt why do variables have dollar signs?". Turns out the flexibility of shell programming allows paths to not use quotes, so it's nice to tell a difference between `cd foo` and `cd $foo`_)
+(_aside: "but why do variables have dollar signs?". Turns out the flexibility of shell programming allows paths to not use quotes, so it's nice to tell a difference between `cd foo` and `cd $foo`_)
 
 This eye towards usable design shows up in many ways. Working with data is improved by not only having structure, but also being able to pattern match against it. Here's an example of pattern matching a list in Nushell:
 

@@ -4,7 +4,7 @@ title = "Happy pride! I'm trans!"
 tags = [ "thoughts", "transgender" ]
 +++
 
-Hi, my name is JT. And I'm trans. Let's talk about it!
+Hi, I'm trans. Let's talk about it!
 
 **Note:** In this blog post, I talk about the medical side of my particular kind of transgender experience. If that's not your thing, feel free to skip.
 

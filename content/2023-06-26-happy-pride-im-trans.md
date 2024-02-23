@@ -12,7 +12,7 @@ Hi, I'm trans. Let's talk about it!
 
 The first time I looked up anything trans-related was in my early 20s. I didn't know it at the time, but I was actually looking for a way to help address a set of symptoms I was having.
 
-For most of my adult life, I experienced a cluster of issues: disassociation, derealization, depersonalization, and others. I thought it was normal to feel disconnected from your body, and for parts of your brain to feel disconnected from other parts of your brain.
+For most of my adult life, I experienced a cluster of issues: dissociation, derealization, depersonalization, and others. I thought it was normal to feel disconnected from your body, and for parts of your brain to feel disconnected from other parts of your brain.
 
 What I didn't understand, but have come to learn this year, is that I have [biochemical dysphoria](https://genderdysphoria.fyi/en/biochemical-dysphoria). In short, this means that the hormone that my body used to regulate, testosterone, was not the correct regulating hormone for me. Think running an engine on the wrong fuel: it kinda works but it's really not good on the engine and you'll have side effects. Switch to the correct one, and you'll notice a big difference.
 

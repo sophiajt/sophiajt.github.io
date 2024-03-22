@@ -58,7 +58,7 @@ Something had definitely changed.
 
 Somehow, my brain and heart had "rewired". In chatting with other trans folks, we came up with two possible reasons why it was happening:
 
-1. HRT is having some kind of mood-altering effect that is giving me access to my romantic side in a way you could not access before.
+1. HRT is having some kind of mood-altering effect that is giving me access to my romantic side in a way I could not access before.
 
 or
 

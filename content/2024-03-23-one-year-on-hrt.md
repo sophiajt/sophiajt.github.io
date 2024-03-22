@@ -111,6 +111,16 @@ Yeah, this is a big one for a lot of folks. Estrogen does whatever it does, and 
 
 Haha, if only HRT helped with this. It sadly does not. I have been practicing regularly for the last 6 months, which has helped a bunch. But wow, it's work work work.
 
+## Passing
+
+An earlier draft of this post didn't include this section, but after writing it and having breakfast, I wanted to say something here. HRT does not allow me to be read as a woman. It's done many things to make parts of me more feminine, but I've never once been correctly gendered in public.
+
+For some trans women, they're lucky in that regard. After a few months on HRT, their already-feminine features are enough with a bit of help to appear feminine enough to be regularly gendered correctly.
+
+I'm on the other end. My face is a bit androgynous naturally, but things like my baldness, and perhaps other characteristics like shoulders, will lead me to be read as masculine.
+
+My goal in this regard is to be a trans woman. What I am as a trans woman. To be myself, basically, and to grow and change to be more myself. To do that, rather than to try to fit into a box that wasn't made for me. If at some point in the future, I happen to fit into such a box, then it will be a happy accident.
+
 # Worth it
 
 HRT has been without a doubt thoroughly worth it. I'm healthier. I'm heading in a healthier direction. My connections to my friends has gotten deeper. My comnection to my inner world has likewise also gotten deeper.

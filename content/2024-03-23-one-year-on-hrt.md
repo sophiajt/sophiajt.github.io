@@ -123,7 +123,7 @@ My goal in this regard is to be a trans woman. What I am as a trans woman. To be
 
 # Worth it
 
-HRT has been without a doubt thoroughly worth it. I'm healthier. I'm heading in a healthier direction. My connections to my friends has gotten deeper. My comnection to my inner world has likewise also gotten deeper.
+HRT has been without a doubt thoroughly worth it. I'm healthier. I'm heading in a healthier direction. My connections to my friends has gotten deeper. My connection to my inner world has likewise also gotten deeper.
 
 I can't imagine ever going back. I feel like I stepped through a portal and behind me a set of doors closed. In front of me, a set of new doors opened.
 

@@ -4,7 +4,7 @@ title = "Worst part of being trans"
 tags = [ "transgender" ]
 +++
 
-I'm sitting here, reading a book, thinking about the road ahead for me as a trans woman. It feels like I can already tell what's likely the worst part of being trans.
+I'm sitting here, reading a book, thinking about the road ahead for me as a trans woman. It feels like I can already tell what's likely the worst part of being trans, at least so far.
 
 You might think it's the bullying. I definitely experienced some of that.
 

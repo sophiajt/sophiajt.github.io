@@ -58,7 +58,7 @@ Something had definitely changed.
 
 Somehow, my brain and heart had "rewired". In chatting with other trans folks, we came up with two possible reasons why it was happening:
 
-1. HRT is having some kind of mood-altering effect that is giving me access to my romantic side in a way you could not access before.
+1. HRT is having some kind of mood-altering effect that is giving me access to my romantic side in a way I could not access before.
 
 or
 
@@ -123,7 +123,7 @@ My goal in this regard is to be a trans woman. What I am as a trans woman. To be
 
 # Worth it
 
-HRT has been without a doubt thoroughly worth it. I'm healthier. I'm heading in a healthier direction. My connections to my friends has gotten deeper. My comnection to my inner world has likewise also gotten deeper.
+HRT has been without a doubt thoroughly worth it. I'm healthier. I'm heading in a healthier direction. My connections to my friends has gotten deeper. My connection to my inner world has likewise also gotten deeper.
 
 I can't imagine ever going back. I feel like I stepped through a portal and behind me a set of doors closed. In front of me, a set of new doors opened.
 

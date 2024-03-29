@@ -22,7 +22,7 @@ Schedule surgeries. And then you wait.
 
 Recover from those surgeries. And recovery takes time. So you wait.
 
-The trick is to learning how to be good at waiting. I'll admit, I kinda suck at it. I've been checking my head everyday to see if I can see changes. I don't recommend this.
+The trick is to learn how to be good at waiting. I'll admit, I kinda suck at it. I've been checking my head everyday to see if I can see changes. I don't recommend this.
 
 For a while there I was measuring my chest almost every day. I don't recommend this, either.
 

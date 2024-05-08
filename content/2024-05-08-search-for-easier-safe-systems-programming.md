@@ -22,9 +22,9 @@ Using a Rust example:
 
 ```rust
 struct Node {
-    data1: &Data
-    data2: &Data
-    data3: &Data
+    data1: &Data,
+    data2: &Data,
+    data3: &Data,
 }
 ```
 
@@ -32,9 +32,9 @@ Rust developers will spot right away that this is an incomplete example. We need
 
 ```rust
 struct Node<'a, 'b, 'c> {
-    data1: &'a Data
-    data2: &'b Data
-    data3: &'c Data
+    data1: &'a Data,
+    data2: &'b Data,
+    data3: &'c Data,
 }
 ```
 

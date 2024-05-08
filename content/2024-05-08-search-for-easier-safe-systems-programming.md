@@ -31,10 +31,10 @@ struct Node {
 Rust developers will spot right away that this is an incomplete example. We need two more things: Lifetime Parameters and Lifetime Annotations. Adding those, we get:
 
 ```rust
-struct Node<’a, ‘b, ‘c> {
-    data1: &’a Data
-    data2: &’b Data
-    data3: &’c Data
+struct Node<'a, 'b, 'c> {
+    data1: &'a Data
+    data2: &'b Data
+    data3: &'c Data
 }
 ```
 

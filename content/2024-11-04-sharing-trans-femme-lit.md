@@ -4,9 +4,9 @@ title = "Sharing Trans Femme Lit"
 tags = [ "transgender" ]
 +++
 
-Co-authored with [Aurora Foo](https://bsky.app/profile/demongrrl.gay)
+_Co-authored with [Aurora Foo](https://bsky.app/profile/demongrrl.gay)_
 
-I just finished reading ["How to Read a Trans Fem Writer"](https://kaichengthom.substack.com/p/how-to-read-a-trans-fem-writer). The article is written generally for readers from outside the queer (and specifically the trans femme) community who might not be used to engaging in this type of art, and has lots of good tips for how to engage with our art. I'd encourage folks to read the essay and reflect. This is especially important because of the volume of negative comments many trans femme authors get on their work. Helping readers have a keener eye and not fall into patterns and expectations that are hurtful to those authors is important.
+We just finished reading ["How to Read a Trans Fem Writer"](https://kaichengthom.substack.com/p/how-to-read-a-trans-fem-writer). The article is written generally for readers from outside the queer (and specifically the trans femme) community who might not be used to engaging in this type of art, and has lots of good tips for how to engage with our art. We'd encourage folks to read the essay and reflect. This is especially important because of the volume of negative comments many trans femme authors get on their work. Helping readers have a keener eye and not fall into patterns and expectations that are hurtful to those authors is important.
 
 As someone inside the trans femme community, it also brought up additional questions about the art that we create and our responsibilities we have to each other.
 

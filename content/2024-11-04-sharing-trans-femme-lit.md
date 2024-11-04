@@ -14,7 +14,7 @@ The first that needs to be said and repeated: we should make the art we want to 
 
 Having said that, there's a conversation we should have amongst each other about how we as a community can better share our art.
 
-Trans femmes, as a community, experience a profound amount of collective trauma. As individuals also, ourselves included, have more than our share of trauma. Art can stir up that trauma because it reaches inside of us. Art that does so should let us know the topics it will covers so that we can be better informed as readers.
+Trans femmes, as a community, experience a profound amount of collective trauma. As individuals also, ourselves included, have more than our share of trauma. Art can stir up that trauma because it reaches inside of us. Art that does so should let us know the topics it will cover so that we can be better informed as readers.
 
 Recently, Soph finished reading [(kimmy)](https://alysongreaves.itch.io/kimmy). It's brilliant. It's clever. It's everything folks lauding it say it is. And it's also horribly triggering and in its current version has an incomplete content warning list. Aurora saw firsthand the effect it had, following along on Soph's reading journey. A book with the themes and content that (kimmy) has needs to throughly warn its readers, to ensure people aren't re-traumatised by its content and can make an informed decision about choosing to read it. That was not the case in our experience, and Soph took emotional damage as a result of reading the book.
 

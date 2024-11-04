@@ -18,6 +18,11 @@ Trans femmes, as a community, experience a profound amount of collective trauma.
 
 Recently, Soph finished reading [(kimmy)](https://alysongreaves.itch.io/kimmy). It's brilliant. It's clever. It's everything folks lauding it say it is. And it's also horribly triggering and in its current version has an incomplete content warning list. Aurora saw firsthand the effect it had, following along on Soph's reading journey. A book with the themes and content that (kimmy) has needs to throughly warn its readers, to ensure people aren't re-traumatised by its content and can make an informed decision about choosing to read it. That was not the case in our experience, and Soph took emotional damage as a result of reading the book.
 
+<details> 
+  <summary>Additional (kimmy) warnings</summary>
+   Repeated rape, forced incest, nonconsensual mind control, and ego/identity death.
+</details>
+
 We then went on social media to see people breathlessly praising this work without warning anyone about its contents. It's undoubtedly brilliant, but it's also painful, and discusses at length things that could be potentially triggering for a lot of trans femmes out there. Going on about how everyone should read it, without stopping to warn folks reading your post to take care, feels irresponsible.
 
 To reiterate: we firmly believe we should make the art we want to make. Make it messy if you want to make it messy. Make it challenging. Make it dark. Give it all the sharp edges you feel you need to in making the art that feels honest and true.

@@ -44,7 +44,6 @@ Just to be clear on the terms we're using for the list:
 | Wyrmheart                                  | Durav, Vyria      |                                                |
 | Sundered Moon                              | Fae'rynn          |                                                |
 | The World Within                           | Finn, Dani        |                                                |
-| Martis the Brazen\*\*                      | Gray, Rien        |                                                |
 | Scales of Seduction                        | Gray, Rien        |                                                |
 | Valerin the Fair                           | Gray, Rien        |                                                |
 | (kimmy)\*\*\*                              | Greaves, Alyson   |                                                |

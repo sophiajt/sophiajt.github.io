@@ -45,6 +45,7 @@ Just to be clear on the terms we're using for the list:
 | Sundered Moon                              | Fae'rynn          |                                                |
 | The World Within                           | Finn, Dani        |                                                |
 | Scales of Seduction                        | Gray, Rien        |                                                |
+| Seure the Tempered                         | Gray, Rien        |                                                |
 | Valerin the Fair                           | Gray, Rien        |                                                |
 | (kimmy)\*\*\*                              | Greaves, Alyson   |                                                |
 | Cora Christensen                           | Howsden, Tanner   |                                                |

@@ -20,7 +20,7 @@ Just to be clear on the terms we're using for the list:
 | Temptation at Randy's                      | Alter, Emily      |                                                |
 | A Quiet Universe                           | Atkinson, Kay     |                                                |
 | A Sea of Silence                           | Atkinson, Kay     |                                                |
-| Nibbled Bookmarks                          | Avant, Melody     |                                                |
+| Nibbled Bookmark                           | Avant, Melody     |                                                |
 | Galaxy: The Prettiest Star                 | Axelrod, Jadzia   |                                                |
 | Confluence: A Person-Shaped Story          | Bakkalian, Nyri   |                                                |
 | Grey Dawn\*\*                              | Bakkalian, Nyri   |                                                |

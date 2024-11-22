@@ -73,7 +73,7 @@ Just to be clear on the terms we're using for the list:
 | Captains of a Tyrant Fate                  | Topaz, Jemma      |                                                |
 | Our Monsters                               | Topaz, Jemma      |                                                |
 | The Brute of Greengrave                    | Topaz, Jemma      |                                                |
-| Pride, Pain, and Petticoats volume 1\*\*   | Trusity, Abby     |                                                |
+| Pride, Pain, and Petticoats volume 1       | Trusity, Abby     |                                                |
 | Pride, Pain, and Petticoats volume 2       | Trusity, Abby     |                                                |
 | Best Friends' Promise                      | Waldrom, Issy     | Sutton, Mackenzie                              |
 | Dawn Weaver                                | Waldrom, Issy     |                                                |

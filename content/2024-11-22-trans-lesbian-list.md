@@ -52,6 +52,7 @@ Just to be clear on the terms we're using for the list:
 | JUNKER SEVEN                                             | Kelley, Olive J.  |                                                |
 | Ransom to Love                                           | Keto, Chloe       |                                                |
 | Huntress of the Night: In Cold Embrace\*\*               | Leonard, Gwen     |                                                |
+| Make Room for Love                                       | Liao, Darcy       |                                                |
 | Not Just Best Friends                                    | Liao, Darcy       |                                                |
 | Beauty's Beast                                           | Lynn, S.T.        |                                                |
 | Cinder Ella\*\*                                          | Lynn, S.T.        | Veldura, Tami                                  |

@@ -34,7 +34,7 @@ Just to be clear on the terms we're using for the list:
 | Magica Riot                                              | Buchanan, Kara    |                                                |
 | Princess Fox and Iron Wolf                               | Chaos, Liliana    |                                                |
 | The Price on Her Head                                    | Clay, Suzanne     |                                                |
-| Ghost Flower\*\*                                         | Cornwell, Jessica |                                                |
+| Ghost Flower\*\*                                         | Conwell, Jessica  |                                                |
 | Dreadnought                                              | Daniels, April    |                                                |
 | Sovereign                                                | Daniels, April    |                                                |
 | She Who Earned Her Wings                                 | Denarr, Vaela     | Iannandrea, Micah                              |

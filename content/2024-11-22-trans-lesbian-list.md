@@ -43,6 +43,7 @@ Just to be clear on the terms we're using for the list:
 | Hatchling                                                | Durav, Vyria      |                                                |
 | Wyrmheart                                                | Durav, Vyria      |                                                |
 | Sundered Moon                                            | Fae'rynn          |                                                |
+| Stray Dogs (1st book in series)                          | Faust, Freya      |                                                |
 | The World Within                                         | Finn, Dani        |                                                |
 | Scales of Seduction                                      | Gray, Rien        |                                                |
 | Seure the Tempered                                       | Gray, Rien        |                                                |

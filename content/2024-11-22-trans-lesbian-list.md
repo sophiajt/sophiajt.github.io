@@ -18,7 +18,6 @@ Just to be clear on the terms we're using for the list:
 | Pack of Her Own                                          | Abbott, Elena     |                                                |
 | The Revenge of Captain Vessia                            | Allen, Leslie     |                                                |
 | Temptation at Randy's                                    | Alter, Emily      |                                                |
-| A Quiet Universe                                         | Atkinson, Kay     |                                                |
 | A Sea of Silence                                         | Atkinson, Kay     |                                                |
 | Nibbled Bookmark                                         | Avant, Melody     |                                                |
 | Galaxy: The Prettiest Star                               | Axelrod, Jadzia   |                                                |

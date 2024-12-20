@@ -23,7 +23,7 @@ taxonomies = [{ name = "tags" }]
 nav = [
   { name = "Home", path = "/" },
   { name = "Tags", path = "/tags" },
-  { name = "Twitter", path = "https://www.twitter.com/sophiajturner" },
+  { name = "Bluesky", path = "https://bsky.app/profile/sophiajt.com" },
   { name = "Mastodon", path = "https://fosstodon.org/@sophiajt" },
   { name = "Atom/RSS", path = "/atom.xml" },
   { name = "Poems", path = "/poems/waitingtogrow" },

@@ -14,19 +14,19 @@ writers, first-time compiler hackers, and experienced compiler hackers.
 
 Perfect! We've love your help to come up with tests that show where an error message is confusing or
 just plain wrong. If you'd like a little help getting started, there are a bunch of unit tests for
-the compiler that all fail intentionally.  You can find these in the rust-lang repo under the
+the compiler that all fail intentionally. You can find these in the rust-lang repo under the
 `src/test/compile_fail` directory. You'll notice we've already started a
 [list of errors](https://github.com/rust-lang/rust/issues/35233), but that list is incomplete. We'd
 like to make sure every error code that needs to be updated makes it onto that list so that others
 can help update them.
 
-There are a *bunch* of good examples in the `compile_fail` directory that explore various error
+There are a _bunch_ of good examples in the `compile_fail` directory that explore various error
 codes. If you look around there
 you can also search for error messages and see if there is already a test. Running this test will
 help you see if the error has been updated to the new format.
 
 If you can find a test case that needs to be updated, file an issue like one of those listed in the
-"list of errors" link and cc @jntrnr. I can help get the error updated to the new format
+"list of errors" link and cc @sophiajt. I can help get the error updated to the new format
 and tag the error so that others can find it.
 
 # I love writing docs!
@@ -43,18 +43,18 @@ If you look at the [list of errors](https://github.com/rust-lang/rust/issues/352
 you can see what we're going for. The likely need here is that errors need new labels. The general
 style of the new errors:
 
-* The error message text. This describes the general problem.
-* The primary error label (the '^^^' underline). This describes the 'what' of the error.
-It tries to summarize what went wrong in an fairly brief, yet approachable way.
-* The secondary error label (the '+++' underline). This describes the 'why' of the error. By reading
-these the user can see the order of operations that lead to the error.
+- The error message text. This describes the general problem.
+- The primary error label (the '^^^' underline). This describes the 'what' of the error.
+  It tries to summarize what went wrong in an fairly brief, yet approachable way.
+- The secondary error label (the '+++' underline). This describes the 'why' of the error. By reading
+  these the user can see the order of operations that lead to the error.
 
 You can also explore the `src/test/compile-fail` of the compiler source code for a lot of unit
-tests that fail intentionally.  By looking through these, you can help find errors that aren't
+tests that fail intentionally. By looking through these, you can help find errors that aren't
 update or that use confusing notes and labels.
 
 Worth mentioning too, if you're a writer, also keep a lookout for Stage 2 (which hopefully will be
-ready in the coming weeks).  We'll need help in the future writing helpful extended messages that
+ready in the coming weeks). We'll need help in the future writing helpful extended messages that
 describe errors. A great place to jump into help out here and learn about other places doc writers
 can help is #rust-docs on irc.mozilla.org.
 
@@ -67,19 +67,19 @@ message to the new format. You can look through the
 Once you've downloaded the [Rust compiler source](https://github.com/rust-lang/rust), run the
 command:
 
-```> python src/bootstrap/bootstrap.py --step libstd --stage 1```
+`> python src/bootstrap/bootstrap.py --step libstd --stage 1`
 
-This will build "Stage 1" of the compiler. After the first compile, this saves us a *bunch* of time
+This will build "Stage 1" of the compiler. After the first compile, this saves us a _bunch_ of time
 as we test our ideas as it is the minimal compiler rather than a full install.
 
 Once built, we can run this by hand using (here, I'm on OS X):
 
-```RUST_NEW_ERROR_FORMAT=true ./build/x86_64-apple-darwin/stage1/bin/rustc <rust file>```
+`RUST_NEW_ERROR_FORMAT=true ./build/x86_64-apple-darwin/stage1/bin/rustc <rust file>`
 
 Let's take a look at an error that needs to be updated. You can find a lot of error tests in the
 `src/test/compile-fail` directory in the compiler source. For this example, I'll use
 `src/test/compile-fail/borrowck/borrowck-match-binding-is-assignment.rs`. You can also see which
-error this is looking for the EXXXX number, which is the error number.  This one is E0384.
+error this is looking for the EXXXX number, which is the error number. This one is E0384.
 
 ```term
 error[E0384]: re-assignment of immutable variable `x`
@@ -189,7 +189,7 @@ And with that, we're done! Well, almost. We can't forget to update the unit test
 
 To quickly check the unit tests that will fail because of our changes, we can run:
 
-```python src/bootstrap/bootstrap.py --step check-cfail --stage 1```
+`python src/bootstrap/bootstrap.py --step check-cfail --stage 1`
 
 Compile-fail unit tests are set up with their own annotations that say what labels to expect and
 where. As we update errors, we'll need to also update the corresponding test the new expected
@@ -210,11 +210,11 @@ test result: FAILED. 2381 passed; 6 failed; 15 ignored; 0 measured
 Sure enough, we need to update some of the unit tests. Let's run these individually. To do this, we
 can use:
 
-```python src/bootstrap/bootstrap.py --step check-cfail <test name> --stage 1```
+`python src/bootstrap/bootstrap.py --step check-cfail <test name> --stage 1`
 
 like so:
 
-```python src/bootstrap/bootstrap.py --step check-cfail asm-out-assign-imm --stage 1```
+`python src/bootstrap/bootstrap.py --step check-cfail asm-out-assign-imm --stage 1`
 
 A fair amount of text comes out, but what we're interested in is:
 
@@ -257,8 +257,8 @@ this goes:
     }
 ```
 
-*Notice: we use the `//~` when the note is by itself, or `//~^` and `//~|` when we're looking
-for multiple notes.*
+_Notice: we use the `//~` when the note is by itself, or `//~^` and `//~|` when we're looking
+for multiple notes._
 
 With that, the test now passes:
 
@@ -290,12 +290,12 @@ err.emit();
 While we're at it, let's run a quick tidy to make sure our code conforms to the compiler coding
 standard:
 
-```python src/bootstrap/bootstrap.py --stage 1 --step check-tidy```
+`python src/bootstrap/bootstrap.py --stage 1 --step check-tidy`
 
-Perfect.  Ship it!
+Perfect. Ship it!
 
 After we've finished with updating the error and the corresponding unit tests, we can create a PR.
-When you file the PR, put the message "r? @jntrnr" at the bottom of your commit
+When you file the PR, put the message "r? @sophiajt" at the bottom of your commit
 message. This will add me to do the code review.
 
 # Extra credit
@@ -396,7 +396,6 @@ with the new error style.
 
 # Thanks!
 
-Thanks for wanting to jump in and help! You can find me on irc.mozilla.org as jntrnr and on
-github.com as jntrnr. If you have any questions, please ask. You can also get lots of good
+Thanks for wanting to jump in and help! You can find me on irc.mozilla.org as sophiajt and on
+github.com as sophiajt. If you have any questions, please ask. You can also get lots of good
 help in #rust-internals and #rustc on irc.mozilla.org.
-

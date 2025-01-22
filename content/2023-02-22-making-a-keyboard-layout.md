@@ -48,9 +48,9 @@ Scoring the different moves ended up being a bit of an art. Setting scores high 
 
 ## Show us the layout already
 
-![Keyboard with pmfcqxluoy inasbkreh ;vgdzjw,.](https://www.jntrnr.com/images/keyboard_layout.png)
+![Keyboard with pmfcqxluoy inasbkreh ;vgdzjw,.](https://www.sophiajt.com/images/keyboard_layout.png)
 
-*Inas keyboard layout*
+_Inas keyboard layout_
 
 Here's the Inas layout (named by the home keys on the left hand).
 
@@ -62,18 +62,18 @@ I broke my corpus of text up into words, then found 1-, 2-, and 3-letter runs of
 
 I used the following scoring:
 
-* Typing on the home row is preferred
-* Center row keys are to be avoided (I learned from guitar that the lift of the finger can be easier on it than lateral stretches)
-* Runs of two should be together where possible
-* Jumps between the top row and bottom row should be avoided
-* Runs of three can fall in a row or can be two in a row and then fall by one row (in the code I call this a j-roll)
-* Try to use the pinkies less (unless necessary for the above)
+- Typing on the home row is preferred
+- Center row keys are to be avoided (I learned from guitar that the lift of the finger can be easier on it than lateral stretches)
+- Runs of two should be together where possible
+- Jumps between the top row and bottom row should be avoided
+- Runs of three can fall in a row or can be two in a row and then fall by one row (in the code I call this a j-roll)
+- Try to use the pinkies less (unless necessary for the above)
 
 If you look at the keyboard above you can see quite a few patterns that fall out from that:
 
-* Common three letter runs like "ing", "you", "the", and "can" are easier to type.
-* Longer words that build on runs are also easier: "there", "this", "think", "thing", "your", "than", "care", "other", "another", and so on. Mixing and matching runs while you type ends up being a fun puzzle.
-* Surprisingly, some common words like "and" don't run. I think this comes from how important "ing" is in English. This takes precedence over the "n" key for rolls.
+- Common three letter runs like "ing", "you", "the", and "can" are easier to type.
+- Longer words that build on runs are also easier: "there", "this", "think", "thing", "your", "than", "care", "other", "another", and so on. Mixing and matching runs while you type ends up being a fun puzzle.
+- Surprisingly, some common words like "and" don't run. I think this comes from how important "ing" is in English. This takes precedence over the "n" key for rolls.
 
 ## But is it good?
 
@@ -85,5 +85,4 @@ If you give it a try, let me know how it goes for you.
 
 ## Build your own
 
-If you want to improve what I have or build your own keyboard you can [try it out for yourself](https://github.com/jntrnr/create_keyboard_layouts)
-
+If you want to improve what I have or build your own keyboard you can [try it out for yourself](https://github.com/sophiajt/create_keyboard_layouts)

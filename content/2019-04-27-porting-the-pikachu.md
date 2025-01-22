@@ -14,9 +14,9 @@ Termion has been a boon for Rust, with lots of folks using it to create terminal
 
 # Enter crossterm
 
-Yesterday, I discovered a crate I have wanted for at least a year: that holy grail of something like termion that also worked crossplatform. The crate is called [crossterm](https://github.com/TimonPost/crossterm), and it is exactly that. Rather than being an exact copy of termion, I'd call Crossterm a termion-like crate. The API surface feels very similar between the two crates, but it's not identical.  That said, often, the translation is 1:1 (or close to it).
+Yesterday, I discovered a crate I have wanted for at least a year: that holy grail of something like termion that also worked crossplatform. The crate is called [crossterm](https://github.com/TimonPost/crossterm), and it is exactly that. Rather than being an exact copy of termion, I'd call Crossterm a termion-like crate. The API surface feels very similar between the two crates, but it's not identical. That said, often, the translation is 1:1 (or close to it).
 
-In this post, I'll detail what I had to do to port to crossterm. You can take a look at my [repo](https://github.com/jntrnr/rust-sloth/tree/crossterm-port) and give it a spin.
+In this post, I'll detail what I had to do to port to crossterm. You can take a look at my [repo](https://github.com/sophiajt/rust-sloth/tree/crossterm-port) and give it a spin.
 
 ## Moving to crossterm
 
@@ -50,6 +50,7 @@ The next step was to set up raw mode. Raw mode lets us get user input directly w
 Lastly, I hide the cursor so it doesn't mess up the animation.
 
 The event loop is similar, though a little more verbose in my version:
+
 ```
 -        let b = stdin.next();
 -        if let Some(Ok(b'q')) = b {
@@ -106,12 +107,12 @@ Unfortunately, assuming everything is string-based doesn't work in Windows. When
 
 To work around this, I stopped buffering the string and instead stored the pixel value in the buffer. When it was time, I drew the whole frame using print! statements.
 
-When I first did this, it was noticeably slower than the termion version(roughly 5-10 fps). This is because calling into the Console API that often (once per character) is going to pull down performance.  Luckily, I could work around this by just checking if we were already using the color I wanted to render. If we were, I didn't set the color again. 
+When I first did this, it was noticeably slower than the termion version(roughly 5-10 fps). This is because calling into the Console API that often (once per character) is going to pull down performance. Luckily, I could work around this by just checking if we were already using the color I wanted to render. If we were, I didn't set the color again.
 
 Performance between the termion version and the crossterm version now look the same to me, which I call good enough :)
 
 # Conclusion
 
-We have a way to move more of our terminal apps to being crossplatform, so that they work out-of-the-box on Windows as well as Unix-based systems. It was fun to write the port, and I did the port in a couple hours without ever having used crossterm before. 
+We have a way to move more of our terminal apps to being crossplatform, so that they work out-of-the-box on Windows as well as Unix-based systems. It was fun to write the port, and I did the port in a couple hours without ever having used crossterm before.
 
 Also, big thanks to [Mitchell Hynes](https://github.com/ecumene-software) for writing the original!

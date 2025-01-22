@@ -114,7 +114,7 @@ Let's take a quick look at the number of flags common Unix commands ship with. T
 
 If you look through the flags of `ls` to see why it has so many, notice how many are configuring what `ls` is displaying. In a real sense, this is going against the underlying philosophy of unix pipelines. Rather than composing a pipeline to get the display you want, you're learning a language of flags for each command to configure the display.
 
-Let's talk about exit codes. Actually, wait, I [already did that](https://www.jntrnr.com/exit-codes/). As I point out in the post, the standard says:
+Let's talk about exit codes. Actually, wait, I [already did that](https://www.sophiajt.com/exit-codes/). As I point out in the post, the standard says:
 
 > "The value of status may be 0, EXIT_SUCCESS, EXIT_FAILURE, [CX] [Option Start] or any other value, though only the least significant 8 bits (that is, status & 0377) shall be available from wait() and waitpid(); the full value shall be available from waitid() and in the siginfo_t passed to a signal handler for SIGCHLD. [Option End]"
 

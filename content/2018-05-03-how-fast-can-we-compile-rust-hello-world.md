@@ -4,7 +4,7 @@ title = "How fast can we compile Rust hello world?"
 tags = [ "rust" ]
 +++
 
-Seeing [Nick Nethercote's blog post about speeding up the compiler](https://blog.mozilla.org/nnethercote/2018/04/30/how-to-speed-up-the-rust-compiler-in-2018/), I started wondering just how fast could a Rust compiler be?  How fast could we compile a simple example?  How fast can we compile a Rust hello world?
+Seeing [Nick Nethercote's blog post about speeding up the compiler](https://blog.mozilla.org/nnethercote/2018/04/30/how-to-speed-up-the-rust-compiler-in-2018/), I started wondering just how fast could a Rust compiler be? How fast could we compile a simple example? How fast can we compile a Rust hello world?
 
 ## Starting out
 
@@ -16,11 +16,11 @@ fn main() {
 }
 ```
 
-Awesome.  Let's see how long this takes to build:
+Awesome. Let's see how long this takes to build:
 
 ```term
 > time cargo build
-   Compiling hello_rust v0.1.0 (file:///home/jonathan/Source/hello_rust)
+   Compiling hello_rust v0.1.0 (file:///home/sophia/Source/hello_rust)
     Finished dev [unoptimized + debuginfo] target(s) in 0.52 secs
 
 real     0m0.548s
@@ -28,7 +28,7 @@ user     0m0.468s
 sys      0m0.080s
 ```
 
-Half a second on my XPS 13 9360, with a i7-7500U @ 2.70GHz with 16 gigs of RAM.  That seems, a bit long for a hello world.  Maybe cargo is doing extra work?
+Half a second on my XPS 13 9360, with a i7-7500U @ 2.70GHz with 16 gigs of RAM. That seems, a bit long for a hello world. Maybe cargo is doing extra work?
 
 ```term
 > time rustc src/main.rs
@@ -38,9 +38,9 @@ user     0m0.289s
 sys      0m0.083s
 ```
 
-That's definitely better.  We're just over 1/3rd of a second.  
+That's definitely better. We're just over 1/3rd of a second.
 
-What should we expect?  If only there were another language we could compile a hello world for that's comparable... 
+What should we expect? If only there were another language we could compile a hello world for that's comparable...
 
 ```term
 > cat hello_c.c
@@ -57,23 +57,23 @@ user     0m0.021s
 sys      0m0.041s
 ```
 
-Woooaah!  Wait a second.  You're telling me that compiling C hello world is over 4.5x faster.  That's... that's something.  Maybe the compiler is doing a bit too much work for this small example?  I mean, we don't need much from the standard library, just the println macro.
+Woooaah! Wait a second. You're telling me that compiling C hello world is over 4.5x faster. That's... that's something. Maybe the compiler is doing a bit too much work for this small example? I mean, we don't need much from the standard library, just the println macro.
 
-You know, a reasonable person would probably stop here and walk away.  Chalk it up to "Rust is more complicated" or "maybe if I knew the right commandline options"
+You know, a reasonable person would probably stop here and walk away. Chalk it up to "Rust is more complicated" or "maybe if I knew the right commandline options"
 
-No, that's not us.  Not today.  Today, we're going to write our own Rust translator.  We're going to see just how fast we can compile Rust to a working hello world.
+No, that's not us. Not today. Today, we're going to write our own Rust translator. We're going to see just how fast we can compile Rust to a working hello world.
 
 ## First stop: let's build a Rust->C translator.
 
-Here's my thinking: if we write our own translator, we can translate the Rust to C ourselves, and then compile the C.  That way, we should end up with a compile time close to the C.
+Here's my thinking: if we write our own translator, we can translate the Rust to C ourselves, and then compile the C. That way, we should end up with a compile time close to the C.
 
 ```term
 > cargo new rabbithole --bin
 ```
 
-Writing a full compiler is complex work, but we're going for speed here.  And speed means cutting corners.  To that end, we're implementing *just enough* of a compiler to translate our Rust to C, then we're calling that good enough.
+Writing a full compiler is complex work, but we're going for speed here. And speed means cutting corners. To that end, we're implementing _just enough_ of a compiler to translate our Rust to C, then we're calling that good enough.
 
-First step, we need a parser.  Luckily, there already is a crate that can parse Rust code for us.
+First step, we need a parser. Luckily, there already is a crate that can parse Rust code for us.
 
 ```
 [dependencies]
@@ -184,22 +184,22 @@ File {
 }
 ```
 
-This might look a bit intimidating, so let's break it down.  The top-most thing is a File.
+This might look a bit intimidating, so let's break it down. The top-most thing is a File.
 
-* File
+- File
 
-Each File continues zero or more Items.  An Item are things like declarations.  Function declarations, for example, are one kind of Item.
+Each File continues zero or more Items. An Item are things like declarations. Function declarations, for example, are one kind of Item.
 
-* File
-  * Item
+- File
+  - Item
 
-Since this file has one function, it has one item, an ItemFn.  This holds all the information about our main function.  You can see in here that we have the function's declaration (sometimes called the function prototype, if you come from C).  This tells us how many parameters it takes, what its return type is, etc.  Luckily for us, this is all empty because main has nothing interesting here.  This lets us focus on the body of the function, here called 'block'
+Since this file has one function, it has one item, an ItemFn. This holds all the information about our main function. You can see in here that we have the function's declaration (sometimes called the function prototype, if you come from C). This tells us how many parameters it takes, what its return type is, etc. Luckily for us, this is all empty because main has nothing interesting here. This lets us focus on the body of the function, here called 'block'
 
-* File
-  * Item (ItemFn)
-    * Block
+- File
+  - Item (ItemFn)
+    - Block
 
-Blocks contain statements and expressions.  This is really the meat of what actually *does* things, and which is where we'll actually spend our time writing the compiler.  Let's take a closer look:
+Blocks contain statements and expressions. This is really the meat of what actually _does_ things, and which is where we'll actually spend our time writing the compiler. Let's take a closer look:
 
 ```
 block: Block {
@@ -244,7 +244,7 @@ block: Block {
 }
 ```
 
-On closer inspection we see this block has only one statement.  A something-something macro something or other.  Oh right, println is a macro!  Let's focus on just the macro invocation itself:
+On closer inspection we see this block has only one statement. A something-something macro something or other. Oh right, println is a macro! Let's focus on just the macro invocation itself:
 
 ```
 mac: Macro {
@@ -273,11 +273,11 @@ mac: Macro {
 },
 ```
 
-Now this is a little more like it.  It's still a little cumbersome, but we can see the parts we need.  There's a `sym` thing that says what the macro is.  Later on, we can see the string that we're printing is a literal string.  We can ignore the rest.
+Now this is a little more like it. It's still a little cumbersome, but we can see the parts we need. There's a `sym` thing that says what the macro is. Later on, we can see the string that we're printing is a literal string. We can ignore the rest.
 
-That's it.  Make sure it's invoking println, and then we'll look for the string that's being printed.
+That's it. Make sure it's invoking println, and then we'll look for the string that's being printed.
 
-To make things a little easier on ourselves, let's make a quick-and-dirty intermediate representation.  This will only have one command so far, but it'll be an easy way to de-couple the function that does the parsing from the one that does the code generation.
+To make things a little easier on ourselves, let's make a quick-and-dirty intermediate representation. This will only have one command so far, but it'll be an easy way to de-couple the function that does the parsing from the one that does the code generation.
 
 ```rust
 enum Command {
@@ -285,7 +285,7 @@ enum Command {
 }
 ```
 
-With that, we're ready to make our parser that can take in the `syn::File` and output our Command.  There are a few ways we can do this, but to keep things pretty simple, I'm going to make a separate `parse` function for each layer we talked about earlier: File, Item, and Block.  You can think of this as us unpacking the useful information from what `syn` gives us into much simpler data structures.
+With that, we're ready to make our parser that can take in the `syn::File` and output our Command. There are a few ways we can do this, but to keep things pretty simple, I'm going to make a separate `parse` function for each layer we talked about earlier: File, Item, and Block. You can think of this as us unpacking the useful information from what `syn` gives us into much simpler data structures.
 
 ```rust
 extern crate syn;
@@ -391,9 +391,9 @@ Ok(
 )
 ```
 
-That's much nicer!  It took a little work reading the `syn` documentation, but once we got the hang of it, we can now work with real Rust source code and turn it into something we can use.
+That's much nicer! It took a little work reading the `syn` documentation, but once we got the hang of it, we can now work with real Rust source code and turn it into something we can use.
 
-Oh, before we go, let's clean one thing up.  You might have noticed that extra set of quotes in the macro argument.  No problem, we'll just turn:
+Oh, before we go, let's clean one thing up. You might have noticed that extra set of quotes in the macro argument. No problem, we'll just turn:
 
 ```rust
 stmts.push(Command::PrintLn(arg.to_string()));
@@ -423,7 +423,7 @@ Ok(
 )
 ```
 
-Beautiful.  Now that we have it in this form, we have a much simpler form that we can hand to the other half of the translator.  In this half, we'll be outputting the C code and compiling it.
+Beautiful. Now that we have it in this form, we have a much simpler form that we can hand to the other half of the translator. In this half, we'll be outputting the C code and compiling it.
 
 Since we only care about one function in one file, let's just make a quick-and-dirty function to generate the C:
 
@@ -447,7 +447,7 @@ fn compile_to_c(file: &File) -> String {
 }
 ```
 
-That's it.  Let's call it.
+That's it. Let's call it.
 
 ```rust
 println!("{}", compile_to_c(&result.unwrap()));
@@ -462,7 +462,7 @@ puts("Hello, world!");
 }
 ```
 
-Woah!  That looks like C to me.  Dare we try to compile it?
+Woah! That looks like C to me. Dare we try to compile it?
 
 ```term
 > cargo run -- ../hello_rust/src/main.rs  > testme.c
@@ -471,7 +471,7 @@ Woah!  That looks like C to me.  Dare we try to compile it?
 Hello, world!
 ```
 
-It... works!  We just made a compiler!
+It... works! We just made a compiler!
 
 ```term
 > time ./target/release/rabbithole ../hello_rust/src/main.rs > testme.c
@@ -487,11 +487,11 @@ sys    0m0.041s
 
 Nice, by cutting lots of corners and making our own translator, we got the compile times down from 0.378s to 0.114s, less than 1/3rd of where we were.
 
-Should we stop there?  Surely we can go further down the rabbit hole.  Oh right, C is not the lowest we can go
+Should we stop there? Surely we can go further down the rabbit hole. Oh right, C is not the lowest we can go
 
 ## Deeper down the rabbit hole
 
-Let's cook up some assembly.  First, let's test how fast we can assemble a hello world in assembly.
+Let's cook up some assembly. First, let's test how fast we can assemble a hello world in assembly.
 
 ```term
 > cat hello_asm.s
@@ -517,15 +517,14 @@ user    0m0.036s
 sys    0m0.008s
 ```
 
-Wow, the assembly output cuts the compile almost in half!  If you haven't seen x64 assembly before, that might look a little strange.  Instead of working with C code with functions, we've dropped down much closer to the machine itself.  The above represents the lowest we can go in Linux.  Let's unpack what's happening:
-
+Wow, the assembly output cuts the compile almost in half! If you haven't seen x64 assembly before, that might look a little strange. Instead of working with C code with functions, we've dropped down much closer to the machine itself. The above represents the lowest we can go in Linux. Let's unpack what's happening:
 
 ```asm
  .text
  .global main
 ```
 
-Our assembly file starts with two things.  One, a section that we'll be talking about the code itself (.text) and then the one symbol we'll be making visible (main).  This will be the main function that the linker will use later.
+Our assembly file starts with two things. One, a section that we'll be talking about the code itself (.text) and then the one symbol we'll be making visible (main). This will be the main function that the linker will use later.
 
 Next, main begins:
 
@@ -533,23 +532,23 @@ Next, main begins:
 main:
 ```
 
-What follows are series of assembly commands.  The hardware keeps numbers and addresses in registers, similar to how you might store them in variables.
+What follows are series of assembly commands. The hardware keeps numbers and addresses in registers, similar to how you might store them in variables.
 
 ```asm
 mov $hw_str, %rdi
 call puts
 ```
 
-With that in mind, this doesn't seem quite so bad.  The first line is going to set up our register that we'll use as the argument to the puts function (here, in Linux, %rdi).  After the argument is ready, we call puts.
+With that in mind, this doesn't seem quite so bad. The first line is going to set up our register that we'll use as the argument to the puts function (here, in Linux, %rdi). After the argument is ready, we call puts.
 
 ```asm
  mov $0, %rax
  ret
 ```
 
-After that, we return 0, just like we did in C.  Here, in 64-bit assembly, we're returning the return value in %rax.  
+After that, we return 0, just like we did in C. Here, in 64-bit assembly, we're returning the return value in %rax.
 
-That's it.  Oh wait, one more thing.  So this was the code section, we still haven't told it what the string is to print (which we called $hw_str earlier).
+That's it. Oh wait, one more thing. So this was the code section, we still haven't told it what the string is to print (which we called $hw_str earlier).
 
 ```asm
  .data
@@ -557,7 +556,7 @@ hw_str:
  .asciz "hello asm"
 ```
 
-That's not bad.  We have a data section that contains our strings.  We have one string, called `hw_str`, and we give it a null-terminated string to print.
+That's not bad. We have a data section that contains our strings. We have one string, called `hw_str`, and we give it a null-terminated string to print.
 
 You may have been wondering about our linker line, too:
 
@@ -565,12 +564,12 @@ You may have been wondering about our linker line, too:
 > time ld -o hello -dynamic-linker /lib64/ld-linux-x86-64.so.2 /usr/lib/x86_64-linux-gnu/crt1.o /usr/lib/x86_64-linux-gnu/crti.o -lc hello_asm.o /usr/lib/x86_64-linux-gnu/crtn.o
 ```
 
-This bit of magic is actually the kind of tasks that your C compiler does for you behind the scenes.  In Linux, for a program to run, it needs to be able to access things like the Linux program loader, the C standard library, and the Linux subsystems.  The above takes the barebones object file we made with the assembler and gives it all it needs to be a complete Linux executable.
+This bit of magic is actually the kind of tasks that your C compiler does for you behind the scenes. In Linux, for a program to run, it needs to be able to access things like the Linux program loader, the C standard library, and the Linux subsystems. The above takes the barebones object file we made with the assembler and gives it all it needs to be a complete Linux executable.
 
-Before we write our assembly-outputting function, let's take a quick pause and talk about Windows.  We've been giving a lot of examples for Linux, but you can do the same kinds of things in Windows.  Make sure you have a 64-bit [nasm](https://www.nasm.us/) installed.
+Before we write our assembly-outputting function, let's take a quick pause and talk about Windows. We've been giving a lot of examples for Linux, but you can do the same kinds of things in Windows. Make sure you have a 64-bit [nasm](https://www.nasm.us/) installed.
 
 ```term
-C:\Users\Jonathan\source\fast_hello>type nasm_hello.asm
+C:\Users\Sophia\source\fast_hello>type nasm_hello.asm
     global main
     extern puts
 
@@ -585,16 +584,16 @@ main:
     ret
 message:
     db 'Hello, Rust!', 0
-C:\Users\Jonathan\source\fast_hello>nasm -f win64 nasm_hello.asm -g -o nasm_hello.obj
+C:\Users\Sophia\source\fast_hello>nasm -f win64 nasm_hello.asm -g -o nasm_hello.obj
 
-C:\Users\Jonathan\source\fast_hello>link -out:b.exe -defaultlib:libcmt "-libpath:C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\lib\\amd64" "-libpath:C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.15063.0\\ucrt\\x64" "-libpath:C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.15063.0\\um\\x64" -nologo nasm_hello.obj
+C:\Users\Sophia\source\fast_hello>link -out:b.exe -defaultlib:libcmt "-libpath:C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\lib\\amd64" "-libpath:C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.15063.0\\ucrt\\x64" "-libpath:C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.15063.0\\um\\x64" -nologo nasm_hello.obj
 ```
 
-You can see that the assembly looks different, though it's similar.  We do a little more setup, but the core of the work is the same.  We set up where the string is, we send it to the `puts` function, and we return 0 via the `rax` register.  Likewise, after we have an object file from the assembler, we have to do a similar dance with the linker in order to have a fully working Windows executable.
+You can see that the assembly looks different, though it's similar. We do a little more setup, but the core of the work is the same. We set up where the string is, we send it to the `puts` function, and we return 0 via the `rax` register. Likewise, after we have an object file from the assembler, we have to do a similar dance with the linker in order to have a fully working Windows executable.
 
 With that, we can see all the techniques we're using in Linux can work in Windows, too.
 
-Okay, let's finish this up and see where we are.  Just like we wrote a C output function, we're going to write an assembly output function.  This function will create two strings: one for the code and one for the data, and then stitch them together.
+Okay, let's finish this up and see where we are. Just like we wrote a C output function, we're going to write an assembly output function. This function will create two strings: one for the code and one for the data, and then stitch them together.
 
 ```rust
 fn compile_to_asm(file: &File) -> String {
@@ -642,11 +641,11 @@ user    0m0.029s
 sys    0m0.011s
 ```
 
-From 0.114s to 0.08s.  We dropped another 30% off the compile time!
+From 0.114s to 0.08s. We dropped another 30% off the compile time!
 
-To recap, we started at 0.548s with Cargo, then 0.378s with rustc, 0.114 going via C, and 0.08 going via assembly.  Roughly a 6.8x speedup.  Can we squeeze anything else out?  
+To recap, we started at 0.548s with Cargo, then 0.378s with rustc, 0.114 going via C, and 0.08 going via assembly. Roughly a 6.8x speedup. Can we squeeze anything else out?
 
-You might be wondering about keeping more things in memory and getting a bit more caching.  It's a good hunch, let's try it!
+You might be wondering about keeping more things in memory and getting a bit more caching. It's a good hunch, let's try it!
 
 ```term
 > time (./target/release/rabbithole ../hello_rust/src/main.rs > hello_asm.s && as hello_asm.s -o hello_asm.o && ld -o hello -dynamic-linker /lib64/ld-linux-x86-64.so.2 /usr/lib/x86_64-linux-gnu/crt1.o /usr/lib/x86_64-linux-gnu/crti.o -lc hello_asm.o /usr/lib/x86_64-linux-gnu/crtn.o)
@@ -656,10 +655,10 @@ user    0m0.028s
 sys    0m0.021s
 ```
 
-That's another 40% off the compile time.  We've now gone from 0.548s to 0.048s, a whole 11x faster.  There's even more we can do.  For example, we can squeeze out more by writing our own parser, outputting the .o ourselves, and more.  But we'll leave that as an exercise for the reader.
+That's another 40% off the compile time. We've now gone from 0.548s to 0.048s, a whole 11x faster. There's even more we can do. For example, we can squeeze out more by writing our own parser, outputting the .o ourselves, and more. But we'll leave that as an exercise for the reader.
 
 ## Conclusion
 
-I hope you had as much fun reading this post as I had in writing it.  There are amazing benefits to all the features that cargo and rustc provide, and the Rust ecosystem builds on those benefits.  At the same time, it's fun to play around with compiler technology and see that when we get down to it, it's just another Rust program that we can tune to our heart's content.  
+I hope you had as much fun reading this post as I had in writing it. There are amazing benefits to all the features that cargo and rustc provide, and the Rust ecosystem builds on those benefits. At the same time, it's fun to play around with compiler technology and see that when we get down to it, it's just another Rust program that we can tune to our heart's content.
 
-You can see the [rabbithole source](https://github.com/jntrnr/rabbithole) if you want to play with it yourself.  
+You can see the [rabbithole source](https://github.com/sophiajt/rabbithole) if you want to play with it yourself.

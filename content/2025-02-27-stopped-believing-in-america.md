@@ -26,7 +26,7 @@ Watching America be consumed by corporate power feels like watching a massive co
 
 In short, anyone who might remind the company it needed to have a conscious.
 
-Yet America has looked on for decades as it built these giants. Corporations, after all, are merely the offspring of the American dream, the product of the successes of capitalism. The line most go up, both legally and "morally", and so everyone salutes them. They invest in them and hope the windfall carries them into retirement. They work for them and help them grow, often as a means to survive.
+Yet America has looked on for decades as it built these giants. Corporations, after all, are merely the offspring of the American dream, the product of the successes of capitalism. The line must go up, both legally and "morally", and so everyone salutes them. They invest in them and hope the windfall carries them into retirement. They work for them and help them grow, often as a means to survive.
 
 The separation of church and state felt like a noble effort. Keep those with one kind of power away from those with another kind of people. Corporations, America's real church, has managed to shrug off any such shackles to grab the reins of governance for themselves.
 

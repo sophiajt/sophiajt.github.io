@@ -24,7 +24,7 @@ Of course they do. Yet that fact doesn't stop America's problems from being prof
 
 Watching America be consumed by corporate power feels like watching a massive conflagration. Nothing seems to be spared the flames. As if exhaling a long-held breath, corporations let go of their DEI initiatives, whole groups of employees trying to secure equality for LGBTQ+ folx in the company, and progressively anyone and everyone who would stand in the way of unfettered sights of the free market.
 
-In short, anyone who might remind the company it needed to have a conscious.
+In short, anyone who might remind the company it needed to have a conscience.
 
 Yet America has looked on for decades as it built these giants. Corporations, after all, are merely the offspring of the American dream, the product of the successes of capitalism. The line must go up, both legally and "morally", and so everyone salutes them. They invest in them and hope the windfall carries them into retirement. They work for them and help them grow, often as a means to survive.
 

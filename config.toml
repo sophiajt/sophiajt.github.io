@@ -31,9 +31,9 @@ nav = [
 
 latest_text = "Check out my latest post:"
 
-icon = "icon.png"
-profile_large = "profile.jpg"
-profile_small = "icon.png"
+icon = "icon.jpg"
+profile_large = "icon.jpg"
+profile_small = "icon.jpg"
 
 accent = "#05a081"
 accent_light = "#82d0c0"

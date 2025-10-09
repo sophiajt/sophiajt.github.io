@@ -24,7 +24,7 @@ nav = [
   { name = "Home", path = "/" },
   { name = "Tags", path = "/tags" },
   { name = "Bluesky", path = "https://bsky.app/profile/sophiajt.com" },
-  { name = "Mastodon", path = "https://fosstodon.org/@sophiajt" },
+  { name = "Mastodon", path = "https://grrl.me/@soph" },
   { name = "Atom/RSS", path = "/atom.xml" },
   { name = "Poems", path = "/poems/waitingtogrow" },
 ]

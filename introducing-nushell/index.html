@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+
+    <style>
+      :root {
+        --accent-color: #05a081;
+        --accent-color-light: #82d0c0;
+      }
+    </style>
+
+    <meta name="theme-color" content="#05a081" />
+
+    
+      <link rel="icon" href="[object]" />
+      <link rel="apple-touch-icon" sizes="48x48" href="[object]" />
+      <link rel="apple-touch-icon" sizes="72x72" href="[object]" />
+      <link rel="apple-touch-icon" sizes="96x96" href="[object]" />
+      <link rel="apple-touch-icon" sizes="144x144" href="[object]" />
+      <link rel="apple-touch-icon" sizes="192x192" href="[object]" />
+      <link rel="apple-touch-icon" sizes="256x256" href="[object]" />
+      <link rel="apple-touch-icon" sizes="384x384" href="[object]" />
+      <link rel="apple-touch-icon" sizes="512x512" href="[object]" />
+    
+
+    
+
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary">
+
+    
+
+    
+
+    
+      
+        <meta name="description" content="" />
+        <meta name="twitter:description" content="">
+      
+    
+
+    
+      <meta name="twitter:title" content="Introducing nushell">
+    
+
+    
+      <link rel="prerender" href="&#x2F;" rel="me" />
+    
+      <link rel="prerender" href="&#x2F;tags" rel="me" />
+    
+      <link rel="prerender" href="https:&#x2F;&#x2F;bsky.app&#x2F;profile&#x2F;sophiajt.com" rel="me" />
+    
+      <link rel="prerender" href="https:&#x2F;&#x2F;grrl.me&#x2F;@soph" rel="me" />
+    
+      <link rel="prerender" href="&#x2F;atom.xml" rel="me" />
+    
+      <link rel="prerender" href="&#x2F;poems&#x2F;waitingtogrow" rel="me" />
+    
+
+    <link rel="prefetch" href="[object]" />
+
+    <title>
+      
+        
+          Introducing nushell
+        
+      
+    </title>
+
+    
+    
+      <link rel="stylesheet" href="https://www.sophiajt.com/main.css">
+    
+    
+  
+
+  
+
+  
+    <link rel="prerender"  href="https://www.sophiajt.com/tags/nushell/">
+  
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "NewsArticle",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://google.com/article"
+      },
+      "headline": "Introducing nushell",
+      "image": [],
+      "datePublished": "2019-08-23T00:00:00+00:00",
+      "dateModified": "2019-08-23T00:00:00+00:00",
+      "author": {
+        "@type": "Person",
+        "name": "Sophia June Turner"
+      },
+       "publisher": {
+        "@type": "Organization",
+        "name": "Sophia June Turner",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.sophiajt.com/icon.jpg"
+        }
+        
+      }
+      
+    }
+  </script>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        
+
+        
+        {
+          
+          "@type": "ListItem",
+          "position": 1,
+          "name": "",
+          "item": "https://www.sophiajt.com/"
+        },
+        
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Introducing nushell",
+          "item": "https://www.sophiajt.com/introducing-nushell/"
+        }
+      ]
+    }
+  </script>
+
+  </head>
+  <body>
+    
+      <header>
+        <a class="profile-icon" href="/">
+          <img src="/icon.jpg" alt="profile picture">
+        </a>
+        <nav>
+          
+            <a rel="me" href="&#x2F;">Home</a>
+          
+            <a rel="me" href="&#x2F;tags">Tags</a>
+          
+            <a rel="me" href="https:&#x2F;&#x2F;bsky.app&#x2F;profile&#x2F;sophiajt.com">Bluesky</a>
+          
+            <a rel="me" href="https:&#x2F;&#x2F;grrl.me&#x2F;@soph">Mastodon</a>
+          
+            <a rel="me" href="&#x2F;atom.xml">Atom&#x2F;RSS</a>
+          
+            <a rel="me" href="&#x2F;poems&#x2F;waitingtogrow">Poems</a>
+          
+        </nav>
+      </header>
+    
+    <main>
+    
+  <div class="post-title">
+    <h1>Introducing nushell</h1>
+    <small>
+      August 23, 2019
+      
+        - 
+        <span class="tags">
+          
+            <a href="https://www.sophiajt.com/tags/nushell/">nushell</a>
+          
+        </span>
+      
+    </small>
+  </div>
+
+  <div>
+    <p>Today, we're introducing a new shell, written in Rust. It draws inspiration from the classic Unix philosophy of pipelines, the structured data approach of PowerShell, functional programming, systems programming, and more.</p>
+<p>It's called Nushell, or just Nu for short. We have a <a href="https://book.nushell.sh/en">book</a> (¡también se habla <a href="https://book.nushell.sh/es">Español</a>!). We have a <a href="https://github.com/nushell/nushell">repo</a>.</p>
+<p>This release was made by Sophia Turner (me), Yehuda Katz, and Andrés Robalino, with contributions from Odin Dutton.</p>
+<p><img src="https://www.sophiajt.com/images/nushell-autocomplete4.gif" alt="Nu in action" /></p>
+<h1 id="but-why">But why?</h1>
+<p>Many of us have gotten used to bash (or zsh/fish/etc), and don't understand why you would need another kind of shell. That was me, too, a few months ago before I started working on this. My friend Yehuda had discovered PowerShell and was going on and on about how amazing it was to do more with the shell, but until he actually gave me a demo, I didn't really believe him.</p>
+<p>Then he talked me into joining him on an idea he had. What if we could take the ideas of a structured shell and make it more functional (as opposed to object-oriented)? What if, like PowerShell, it worked on Windows, Linux, and macOS? What if it had great error messages? I fell in love with the project ideas, made a few new friends, and many nights and weekends later I'd like to show you what we've made.</p>
+<p>In this post, I'll talk about how a few simple ideas drive how Nu works, what Nu can do with them, and where we hope to go in the future.</p>
+<h1 id="simple-ideas">Simple ideas</h1>
+<p>To Nu, everything is data. When you type <code>ls</code>, you're given a table of information about the directory you're listing:</p>
+<p><img src="https://www.sophiajt.com/images/nu_ls.png" alt="ls command" /></p>
+<p>Rather than having to remember different flags to <code>ls</code>, we can just work with the data it gives back. We can find the files greater than a certain size:</p>
+<p><img src="https://www.sophiajt.com/images/nu_ls_filter.png" alt="ls with filtering" /></p>
+<p>Or we could choose to sort it by a column, or only show directories, or more. That by itself is fun but perhaps not compelling enough.</p>
+<p><img src="https://www.sophiajt.com/images/nu_ps_filter.png" alt="ps with filtering" /></p>
+<p>Where this simple concept - that everything in Nu is data - starts to shine when we try other commands and realize that we're using the same commands to filter, to sort, etc. Rather than having the need to remember all the parameters to all the commands, we can just use the same verbs to act over our data, regardless of where the data came from. Nu pushes this idea even further.</p>
+<p><img src="https://www.sophiajt.com/images/open_cargo.png" alt="opening toml file" /></p>
+<p>Nu also understands structured text files like JSON, TOML, YAML, and more. Opening these files gives us the same tables we saw with <code>ls</code> and <code>ps</code>. Again, this lets us use the same commands to filter our data, explore it, and use it.</p>
+<h1 id="working-with-the-outside-world">Working with the outside world</h1>
+<p>The above approach could be fun, but if we're not careful, it could become a walled garden. What happens outside of the commands Nu comes with?</p>
+<p>First, let's take a look at working with a file that Nu doesn't understand.</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>&gt; open people.psv
+</span><span>Octavia | Butler | Writer
+</span><span>Bob | Ross | Painter
+</span><span>Antonio | Vivaldi | Composer
+</span></code></pre>
+<p>To work with this in Nu, we need to do two steps: figure out where the rows are, and then figure out what the columns are. The rows are pretty easy, we just have one record per row:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>&gt; open people.psv | lines
+</span><span>---+------------------------------
+</span><span> # | value
+</span><span>---+------------------------------
+</span><span> 0 | Octavia | Butler | Writer
+</span><span> 1 | Bob | Ross | Painter
+</span><span> 2 | Antonio | Vivaldi | Composer
+</span><span>---+------------------------------
+</span></code></pre>
+<p>Next, we can create our columns by splitting each row at the pipe (<code>|</code>) symbol:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>&gt; open people.psv | lines | split-column &quot;|&quot;
+</span><span>---+----------+-----------+-----------
+</span><span> # | Column1  | Column2   | Column3
+</span><span>---+----------+-----------+-----------
+</span><span> 0 | Octavia  |  Butler   |  Writer
+</span><span> 1 | Bob      |  Ross     |  Painter
+</span><span> 2 | Antonio  |  Vivaldi  |  Composer
+</span><span>---+----------+-----------+-----------
+</span></code></pre>
+<p>That's already good enough that we can work with the data. We can go a step further and name the columns if we want:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>&gt; open people.psv | lines | split-column &quot; | &quot; firstname lastname job
+</span><span>---+-----------+----------+----------
+</span><span> # | firstname | lastname | job
+</span><span>---+-----------+----------+----------
+</span><span> 0 | Octavia   | Butler   | Writer
+</span><span> 1 | Bob       | Ross     | Painter
+</span><span> 2 | Antonio   | Vivaldi  | Composer
+</span><span>---+-----------+----------+----------
+</span></code></pre>
+<p>But what about working with commands outside of Nu? Let's first call the native version of <code>ls</code> instead of the Nu version:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>&gt; ^ls
+</span><span>assets	     Cargo.lock  docs	images	 Makefile.toml	README.md     rustfmt2.toml  src     tests
+</span><span>Cargo2.toml  Cargo.toml  extra	LICENSE  open		readonly.txt  rustfmt.toml   target
+</span></code></pre>
+<p>We'll use the same commands we used on data to bring it into Nu:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>^ls | split-row &quot; &quot; file
+</span><span>----+---------------
+</span><span> #  | value
+</span><span>----+---------------
+</span><span> 0  | assets
+</span><span> 1  | Cargo2.toml
+</span><span> 2  | Cargo.lock
+</span><span> 3  | Cargo.toml
+</span><span> 4  | docs
+</span><span> 5  | extra
+</span><span> 6  | images
+</span><span> 7  | LICENSE
+</span><span> 8  | Makefile.toml
+</span><span> 9  | open
+</span><span> 10 | README.md
+</span><span> 11 | readonly.txt
+</span><span> 12 | rustfmt2.toml
+</span><span> 13 | rustfmt.toml
+</span><span> 14 | src
+</span><span> 15 | target
+</span><span> 16 | tests
+</span><span>----+---------------
+</span></code></pre>
+<p>Or maybe we want to work with the native <code>ls -la</code>:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>^ls -la | lines | split-column &quot; &quot;
+</span><span>----+------------+---------+----------+----------+---------+---------+---------+---------+---------------
+</span><span> #  | Column1    | Column2 | Column3  | Column4  | Column5 | Column6 | Column7 | Column8 | Column9
+</span><span>----+------------+---------+----------+----------+---------+---------+---------+---------+---------------
+</span><span> 0  | total      | 296     |          |          |         |         |         |         |
+</span><span> 1  | drwxr-xr-x | 13      | sophia | sophia | 4096    | Aug     | 24      | 03:24   | .
+</span><span> 2  | drwxr-xr-x | 21      | sophia | sophia | 4096    | Aug     | 22      | 17:00   | ..
+</span><span> 3  | drwxr-xr-x | 2       | sophia | sophia | 4096    | Aug     | 3       | 05:39   | assets
+</span><span> 4  | drwxr-xr-x | 2       | sophia | sophia | 4096    | Aug     | 21      | 19:29   | .azure
+</span><span> 5  | drwxr-xr-x | 2       | sophia | sophia | 4096    | Jun     | 23      | 05:09   | .cargo
+</span><span> 6  | -rw-r--r-- | 1       | sophia | sophia | 2963    | Aug     | 22      | 20:17   | Cargo2.toml
+</span><span> 7  | -rw-r--r-- | 1       | sophia | sophia | 201255  | Aug     | 24      | 03:24   | Cargo.lock
+</span><span> 8  | -rw-r--r-- | 1       | sophia | sophia | 3127    | Aug     | 24      | 03:24   | Cargo.toml
+</span><span> 9  | drwxr-xr-x | 2       | sophia | sophia | 4096    | Jun     | 17      | 15:32   | docs
+</span><span> 10 | -rw-r--r-- | 1       | sophia | sophia | 148     | Jun     | 17      | 15:32   | .editorconfig
+</span><span> 11 | drwxr-xr-x | 4       | sophia | sophia | 4096    | Aug     | 22      | 19:29   | extra
+</span><span> 12 | drwxr-xr-x | 8       | sophia | sophia | 4096    | Aug     | 24      | 03:24   | .git
+</span><span> 13 | -rw-r--r-- | 1       | sophia | sophia | 58      | Aug     | 10      | 11:08   | .gitignore
+</span><span> 14 | drwxr-xr-x | 2       | sophia | sophia | 4096    | Aug     | 24      | 03:24   | images
+</span><span> 15 | -rw-r--r-- | 1       | sophia | sophia | 1085    | Jun     | 17      | 15:32   | LICENSE
+</span><span> 16 | -rw-r--r-- | 1       | sophia | sophia | 614     | Jun     | 17      | 15:32   | Makefile.toml
+</span><span> 17 | -rw-r--r-- | 1       | sophia | sophia | 0       | Aug     | 23      | 04:58   | open
+</span><span> 18 | -rw-r--r-- | 1       | sophia | sophia | 11375   | Aug     | 24      | 03:24   | README.md
+</span><span> 19 | -r--r--r-- | 1       | sophia | sophia | 0       | Jul     | 4       | 03:51   | readonly.txt
+</span><span> 20 | -rw-r--r-- | 1       | sophia | sophia | 37      | Aug     | 23      | 04:54   | rustfmt2.toml
+</span><span> 21 | -rw-r--r-- | 1       | sophia | sophia | 16      | Aug     | 1       | 19:45   | rustfmt.toml
+</span><span> 22 | drwxr-xr-x | 10      | sophia | sophia | 4096    | Aug     | 24      | 03:24   | src
+</span><span> 23 | drwxr-xr-x | 4       | sophia | sophia | 4096    | Aug     | 22      | 19:22   | target
+</span><span> 24 | drwxr-xr-x | 4       | sophia | sophia | 4096    | Aug     | 22      | 04:15   | tests
+</span><span> 25 | drwxrwxr-x | 2       | sophia | sophia | 4096    | Jul     | 19      | 15:18   | .vscode
+</span><span>----+------------+---------+----------+----------+---------+---------+---------+---------+---------------
+</span></code></pre>
+<p>After a bit of experimenting, we might come up with a command like this:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>&gt; ^ls -la | lines | skip 1 | split-column &quot; &quot; perms files group user size month day time name
+</span><span>----+------------+-------+----------+----------+--------+-------+-----+-------+---------------
+</span><span> #  | perms      | files | group    | user     | size   | month | day | time  | name
+</span><span>----+------------+-------+----------+----------+--------+-------+-----+-------+---------------
+</span><span> 0  | drwxr-xr-x | 13    | sophia | sophia | 4096   | Aug   | 24  | 03:24 | .
+</span><span> 1  | drwxr-xr-x | 21    | sophia | sophia | 4096   | Aug   | 22  | 17:00 | ..
+</span><span> 2  | drwxr-xr-x | 2     | sophia | sophia | 4096   | Aug   | 3   | 05:39 | assets
+</span><span> 3  | drwxr-xr-x | 2     | sophia | sophia | 4096   | Aug   | 21  | 19:29 | .azure
+</span><span> 4  | drwxr-xr-x | 2     | sophia | sophia | 4096   | Jun   | 23  | 05:09 | .cargo
+</span><span> 5  | -rw-r--r-- | 1     | sophia | sophia | 2963   | Aug   | 22  | 20:17 | Cargo2.toml
+</span><span> 6  | -rw-r--r-- | 1     | sophia | sophia | 201255 | Aug   | 24  | 03:24 | Cargo.lock
+</span><span> 7  | -rw-r--r-- | 1     | sophia | sophia | 3127   | Aug   | 24  | 03:24 | Cargo.toml
+</span><span> 8  | drwxr-xr-x | 2     | sophia | sophia | 4096   | Jun   | 17  | 15:32 | docs
+</span><span> 9  | -rw-r--r-- | 1     | sophia | sophia | 148    | Jun   | 17  | 15:32 | .editorconfig
+</span><span> 10 | drwxr-xr-x | 4     | sophia | sophia | 4096   | Aug   | 22  | 19:29 | extra
+</span><span> 11 | drwxr-xr-x | 8     | sophia | sophia | 4096   | Aug   | 24  | 03:24 | .git
+</span><span> 12 | -rw-r--r-- | 1     | sophia | sophia | 58     | Aug   | 10  | 11:08 | .gitignore
+</span><span> 13 | drwxr-xr-x | 2     | sophia | sophia | 4096   | Aug   | 24  | 03:24 | images
+</span><span> 14 | -rw-r--r-- | 1     | sophia | sophia | 1085   | Jun   | 17  | 15:32 | LICENSE
+</span><span> 15 | -rw-r--r-- | 1     | sophia | sophia | 614    | Jun   | 17  | 15:32 | Makefile.toml
+</span><span> 16 | -rw-r--r-- | 1     | sophia | sophia | 0      | Aug   | 23  | 04:58 | open
+</span><span> 17 | -rw-r--r-- | 1     | sophia | sophia | 11375  | Aug   | 24  | 03:24 | README.md
+</span><span> 18 | -r--r--r-- | 1     | sophia | sophia | 0      | Jul   | 4   | 03:51 | readonly.txt
+</span><span> 19 | -rw-r--r-- | 1     | sophia | sophia | 37     | Aug   | 23  | 04:54 | rustfmt2.toml
+</span><span> 20 | -rw-r--r-- | 1     | sophia | sophia | 16     | Aug   | 1   | 19:45 | rustfmt.toml
+</span><span> 21 | drwxr-xr-x | 10    | sophia | sophia | 4096   | Aug   | 24  | 03:24 | src
+</span><span> 22 | drwxr-xr-x | 4     | sophia | sophia | 4096   | Aug   | 22  | 19:22 | target
+</span><span> 23 | drwxr-xr-x | 4     | sophia | sophia | 4096   | Aug   | 22  | 04:15 | tests
+</span><span> 24 | drwxrwxr-x | 2     | sophia | sophia | 4096   | Jul   | 19  | 15:18 | .vscode
+</span><span>----+------------+-------+----------+----------+--------+-------+-----+-------+---------------
+</span></code></pre>
+<p>Because Nu let's you manipulate your data until it's how you want it, there's a feeling of playing with your data. You get used to using the verbs, and then you can use them on anything. When you're ready, you can write it back to disk.</p>
+<p>Oh, before I forget - I wanted to quickly show how to get data from Nu back out into the outside world. Here's an example of calling <code>echo</code> on each filename in a directory:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>&gt; ls | get name | echo $it
+</span></code></pre>
+<p>You can see that we can mix-and-match commands that are inside of Nu with those that are outside, and data will still flow between them as expected. But Nu is more than just a pipeline.</p>
+<h1 id="more-than-a-pipeline">More than a pipeline</h1>
+<p>As we built Nu, we realized we could experiment with other parts of how a shell works. The first of these experiments lead us to an observation: if everything is data in Nu, we should be able to view this data.</p>
+<p><img src="https://www.sophiajt.com/images/view_source.png" alt="viewing source file" /></p>
+<p>We've seen the tables. Nu also supports opening and looking at text and binary data. If we open a source file, we can scroll around in a syntax-highlighted file. If we open an xml, we can look at its data. We can even open a binary file and look at what's inside (hint: there's even a fun easter egg if you open certain kinds binary files, especially if you've installed Nu with the optional <code>rawkey</code> feature).</p>
+<p>Being able to view data is helpful, and this kind of polish extends to other aspects, like error messages:</p>
+<p><img src="https://www.sophiajt.com/images/nu_error2.png" alt="simple error" /></p>
+<p>Nu takes heavy inspiration from the <a href="https://blog.rust-lang.org/2016/08/10/Shape-of-errors-to-come.html">error messages in Rust</a>. As much as possible, draw your eyes to the problem.</p>
+<p>Combined with the pipeline, some pretty interesting errors are possible:</p>
+<p><img src="https://www.sophiajt.com/images/nu_error_metadata.png" alt="error with metadata" /></p>
+<p>You might wonder how does that even work. Nu has a metadata system (still early!) that you can read about in the <a href="https://book.nushell.sh/en/metadata">Metadata chapter</a> of the <a href="https://book.nushell.sh">Nu book</a>. Let's just take a quick peek at it:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>&gt; open Cargo.toml
+</span><span>------------+--------------+------------------+----------+----------
+</span><span> bin        | dependencies | dev-dependencies | lib      | package
+</span><span>------------+--------------+------------------+----------+----------
+</span><span> [11 items] | [object]     | [object]         | [object] | [object]
+</span><span>------------+--------------+------------------+----------+----------
+</span><span>&gt; open Cargo.toml | tags
+</span><span>----------+------------------------------------------
+</span><span> span     | origin
+</span><span>----------+------------------------------------------
+</span><span> [object] | /home/sophia/Source/nushell/Cargo.toml
+</span><span>----------+------------------------------------------
+</span></code></pre>
+<p>Data that flows through the pipeline gets a set of additional metadata tagged to it. We can use this later to figure out how to display the contents, show a better error message, and more.</p>
+<h1 id="shells-plural">Shells, plural</h1>
+<p>Let's say you're in a directory, but you'd really like to flip back and forth between it and one or two others. You could open up multiple tabs, multiple terminals, if you're on a Unix system you could use "screen", and probably even more than that. What if the shells were just built in?</p>
+<p>In Nu, we can <code>enter</code> a directory, which adds it to a ring of shells we can bounce between:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>&gt; enter ../rhai/
+</span><span>/home/sophia/Source/rhai(master)&gt; shells
+</span><span>---+---+------------+-------------------------------
+</span><span> # |   | name       | path
+</span><span>---+---+------------+-------------------------------
+</span><span> 0 |   | filesystem | /home/sophia/Source/nushell
+</span><span> 1 | X | filesystem | /home/sophia/Source/rhai
+</span><span>---+---+------------+-------------------------------
+</span></code></pre>
+<p>Using <code>n</code> and <code>p</code> we can jump back and forth between the shells. <code>exit</code> gets us out of a shell.</p>
+<p>You might noticed that <code>name</code> column in the <code>shells</code> table. Why's that there? Oh no... oh yes.</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>&gt; enter Cargo.toml
+</span><span>/&gt; shells
+</span><span>---+---+--------------------------------------------+-------------------------------
+</span><span> # |   | name                                       | path
+</span><span>---+---+--------------------------------------------+-------------------------------
+</span><span> 0 |   | filesystem                                 | /home/sophia/Source/nushell
+</span><span> 1 |   | filesystem                                 | /home/sophia/Source/rhai
+</span><span> 2 | X | {/home/sophia/Source/nushell/Cargo.toml} | /
+</span><span>---+---+--------------------------------------------+-------------------------------
+</span></code></pre>
+<p>That's right, we're in the file. Can we <code>cd</code>? Oh yes, we can:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>/&gt; ls
+</span><span>------------+--------------+------------------+----------+----------
+</span><span> bin        | dependencies | dev-dependencies | lib      | package
+</span><span>------------+--------------+------------------+----------+----------
+</span><span> [11 items] | [object]     | [object]         | [object] | [object]
+</span><span>------------+--------------+------------------+----------+----------
+</span><span>/&gt; cd bin
+</span><span>/bin&gt; ls
+</span><span>----+----------------------+---------------------------
+</span><span> #  | name                 | path
+</span><span>----+----------------------+---------------------------
+</span><span> 0  | nu_plugin_inc        | src/plugins/inc.rs
+</span><span> 1  | nu_plugin_sum        | src/plugins/sum.rs
+</span><span> 2  | nu_plugin_add        | src/plugins/add.rs
+</span><span> 3  | nu_plugin_edit       | src/plugins/edit.rs
+</span><span> 4  | nu_plugin_str        | src/plugins/str.rs
+</span><span> 5  | nu_plugin_skip       | src/plugins/skip.rs
+</span><span> 6  | nu_plugin_sys        | src/plugins/sys.rs
+</span><span> 7  | nu_plugin_tree       | src/plugins/tree.rs
+</span><span> 8  | nu_plugin_binaryview | src/plugins/binaryview.rs
+</span><span> 9  | nu_plugin_textview   | src/plugins/textview.rs
+</span><span> 10 | nu                   | src/main.rs
+</span><span>----+----------------------+---------------------------
+</span></code></pre>
+<h1 id="plugins">Plugins</h1>
+<p>Nu can't come with everything you might want to do with it, so we're releasing Nu with the ability to extend it with plugins. There's more information in the <a href="https://book.nushell.sh/en/plugins">plugins chapters</a>. Nu will look for these plugins in your path, and load them up on startup.</p>
+<h1 id="all-because-of-rust">All because of Rust</h1>
+<p>Nu would not have been possible without Rust. Internally, it uses async/await, async streams, and liberal use of "serde" to manage serializing and deserializing into the common data format and to communicate with plugins.</p>
+<p>We also heavily leveraged <a href="https://crates.io">crates.io</a>. The ability to load numerous file formats, display messages, draw tables, and more all came from the hundreds (thousands?) of generous developers who wrote the crates we use in Nu. A <strong>huge</strong> thank you to everyone who contributed to Nu without ever knowing it.</p>
+<h1 id="what-s-next">What's next?</h1>
+<p>Nu is just getting started. In this release, we have a foundation to build on. Next, we'll work towards stability, the abilty to use Nu as your main shell, the ability to write functions and scripts in Nu, and much more.</p>
+<p>If you want to give it a spin, the <a href="https://book.nushell.sh/en/installation">installation instructions</a> will help you get started. If you want to chat come by our <a href="https://discord.gg/NtAbbGn">discord</a> and <a href="https://github.com/nushell/nushell">github</a></p>
+
+  </div>
+
+  <hr class="footer-rule" />
+
+  
+    <div class="footer-about">
+      <p>A simple dev-blog theme created by Bennett. You can follow him on <a href="https://github.com/bennetthardwick">Github</a> (if you like).</p>
+
+    </div>
+  
+
+  <div class="related-container">
+
+    
+
+    
+
+  </div>
+
+
+    </main>
+  </body>
+</html>

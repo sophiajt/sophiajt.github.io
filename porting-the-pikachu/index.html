@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+
+    <style>
+      :root {
+        --accent-color: #05a081;
+        --accent-color-light: #82d0c0;
+      }
+    </style>
+
+    <meta name="theme-color" content="#05a081" />
+
+    
+      <link rel="icon" href="[object]" />
+      <link rel="apple-touch-icon" sizes="48x48" href="[object]" />
+      <link rel="apple-touch-icon" sizes="72x72" href="[object]" />
+      <link rel="apple-touch-icon" sizes="96x96" href="[object]" />
+      <link rel="apple-touch-icon" sizes="144x144" href="[object]" />
+      <link rel="apple-touch-icon" sizes="192x192" href="[object]" />
+      <link rel="apple-touch-icon" sizes="256x256" href="[object]" />
+      <link rel="apple-touch-icon" sizes="384x384" href="[object]" />
+      <link rel="apple-touch-icon" sizes="512x512" href="[object]" />
+    
+
+    
+
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary">
+
+    
+
+    
+
+    
+      
+        <meta name="description" content="" />
+        <meta name="twitter:description" content="">
+      
+    
+
+    
+      <meta name="twitter:title" content="Creating crossplatform Rust terminal apps">
+    
+
+    
+      <link rel="prerender" href="&#x2F;" rel="me" />
+    
+      <link rel="prerender" href="&#x2F;tags" rel="me" />
+    
+      <link rel="prerender" href="https:&#x2F;&#x2F;bsky.app&#x2F;profile&#x2F;sophiajt.com" rel="me" />
+    
+      <link rel="prerender" href="https:&#x2F;&#x2F;grrl.me&#x2F;@soph" rel="me" />
+    
+      <link rel="prerender" href="&#x2F;atom.xml" rel="me" />
+    
+      <link rel="prerender" href="&#x2F;poems&#x2F;waitingtogrow" rel="me" />
+    
+
+    <link rel="prefetch" href="[object]" />
+
+    <title>
+      
+        
+          Creating crossplatform Rust terminal apps
+        
+      
+    </title>
+
+    
+    
+      <link rel="stylesheet" href="https://www.sophiajt.com/main.css">
+    
+    
+  
+
+  
+
+  
+    <link rel="prerender"  href="https://www.sophiajt.com/tags/rust/">
+  
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "NewsArticle",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://google.com/article"
+      },
+      "headline": "Creating crossplatform Rust terminal apps",
+      "image": [],
+      "datePublished": "2019-04-27T00:00:00+00:00",
+      "dateModified": "2019-04-27T00:00:00+00:00",
+      "author": {
+        "@type": "Person",
+        "name": "Sophia June Turner"
+      },
+       "publisher": {
+        "@type": "Organization",
+        "name": "Sophia June Turner",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.sophiajt.com/icon.jpg"
+        }
+        
+      }
+      
+    }
+  </script>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        
+
+        
+        {
+          
+          "@type": "ListItem",
+          "position": 1,
+          "name": "",
+          "item": "https://www.sophiajt.com/"
+        },
+        
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Creating crossplatform Rust terminal apps",
+          "item": "https://www.sophiajt.com/porting-the-pikachu/"
+        }
+      ]
+    }
+  </script>
+
+  </head>
+  <body>
+    
+      <header>
+        <a class="profile-icon" href="/">
+          <img src="/icon.jpg" alt="profile picture">
+        </a>
+        <nav>
+          
+            <a rel="me" href="&#x2F;">Home</a>
+          
+            <a rel="me" href="&#x2F;tags">Tags</a>
+          
+            <a rel="me" href="https:&#x2F;&#x2F;bsky.app&#x2F;profile&#x2F;sophiajt.com">Bluesky</a>
+          
+            <a rel="me" href="https:&#x2F;&#x2F;grrl.me&#x2F;@soph">Mastodon</a>
+          
+            <a rel="me" href="&#x2F;atom.xml">Atom&#x2F;RSS</a>
+          
+            <a rel="me" href="&#x2F;poems&#x2F;waitingtogrow">Poems</a>
+          
+        </nav>
+      </header>
+    
+    <main>
+    
+  <div class="post-title">
+    <h1>Creating crossplatform Rust terminal apps</h1>
+    <small>
+      April 27, 2019
+      
+        - 
+        <span class="tags">
+          
+            <a href="https://www.sophiajt.com/tags/rust/">rust</a>
+          
+        </span>
+      
+    </small>
+  </div>
+
+  <div>
+    <p><img src="/images/pikachu.jpg" alt="Pikachu animation in Windows" /></p>
+<p><em>Look Mom, Pikachu running in Windows CMD!</em></p>
+<p>I've been wanting to play around with the cool <a href="https://www.reddit.com/r/rust/comments/bf5uzr/update_on_my_3d_ascii_art_generator_termiontobj/">spinning Pikachu demo</a> everyone was talking about. Sadly, it used termion to do its magic, which meant that unfortunately it wouldn't work for me.</p>
+<p>Termion has been a boon for Rust, with lots of folks using it to create terminal applications. Unfortunately, as a Windows user, I know there's a good chance that if the crate depends on termion that's the end of the line for me, as termion apps just don't work in Windows. Surely, I thought, there must be a better way, but I never managed to find one.</p>
+<h1 id="enter-crossterm">Enter crossterm</h1>
+<p>Yesterday, I discovered a crate I have wanted for at least a year: that holy grail of something like termion that also worked crossplatform. The crate is called <a href="https://github.com/TimonPost/crossterm">crossterm</a>, and it is exactly that. Rather than being an exact copy of termion, I'd call Crossterm a termion-like crate. The API surface feels very similar between the two crates, but it's not identical. That said, often, the translation is 1:1 (or close to it).</p>
+<p>In this post, I'll detail what I had to do to port to crossterm. You can take a look at my <a href="https://github.com/sophiajt/rust-sloth/tree/crossterm-port">repo</a> and give it a spin.</p>
+<h2 id="moving-to-crossterm">Moving to crossterm</h2>
+<p>Like termion, crossterm is a single crate to depend on that pulls in what you need for interacting with the terminal:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>-termion = &quot;1&quot;
+</span><span>+crossterm = &quot;0.9.3&quot;
+</span></code></pre>
+<p>Next, is setting up the terminal:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>-    let mut stdout = AlternateScreen::from(stdout().into_raw_mode().unwrap()); // Raw output is clean output
+</span><span>-    let mut stdin = async_stdin().bytes(); // Async in so input isn&#39;t blocking
+</span><span>+
+</span><span>+    let crossterm = Crossterm::new();
+</span><span>+    #[allow(unused)]
+</span><span>+    let screen = RawScreen::into_raw_mode();
+</span><span>+    let input = crossterm.input();
+</span><span>+    let mut stdin = input.read_async();
+</span><span>+    let cursor = cursor();
+</span><span>+
+</span><span>+    cursor.hide()?;
+</span></code></pre>
+<p>There are a few more steps here, and I took a slightly different approach than termion. In the original, the author uses an AlternateScreen, a way to easily switch back to the previous terminal with the application exits. The crossterm package supports this, though there were is an <a href="https://github.com/TimonPost/crossterm/issues/128">issue</a> that's being worked on. Using an AlternateScreen is optional, so I just left it off.</p>
+<p>The next step was to set up raw mode. Raw mode lets us get user input directly without the normal terminal buffering. The order of operations in crossterm above is important.</p>
+<p>Lastly, I hide the cursor so it doesn't mess up the animation.</p>
+<p>The event loop is similar, though a little more verbose in my version:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>-        let b = stdin.next();
+</span><span>-        if let Some(Ok(b&#39;q&#39;)) = b {
+</span><span>-            break;
+</span><span>+        if let Some(b) = stdin.next() {
+</span><span>+            match b {
+</span><span>+                InputEvent::Keyboard(event) =&gt; match event {
+</span><span>+                    KeyEvent::Char(&#39;q&#39;) =&gt; break,
+</span><span>+                    _ =&gt; {}
+</span><span>+                },
+</span><span>+                _ =&gt; {}
+</span><span>+            }
+</span></code></pre>
+<p>The event systems between termion and crossterm, while similar, are different enough that I preferred to do two-step match to make sure I understood it. Events for both key and mouse come in through the event stream, which is a nice benefit.</p>
+<p>Drawing colors to the screen is also very similar between termion and crossterm:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>-    format!(&quot;{}{}{}{}&quot;, color::Fg(color::Rgb(bg.0, bg.1, bg.2)),
+</span><span>-                        color::Bg(color::Rgb(25,25,25)),
+</span><span>-                      src,
+</span><span>-                      color::Fg(color::Reset))
+</span><span>+                    print!(
+</span><span>+                        &quot;{}{}{}&quot;,
+</span><span>+                        Colored::Fg(Color::Rgb {
+</span><span>+                            r: (pixel.1).0,
+</span><span>+                            g: (pixel.1).1,
+</span><span>+                            b: (pixel.1).2
+</span><span>+                        }),^M
+</span><span>+                        Colored::Bg(Color::Rgb {
+</span><span>+                            r: 25,
+</span><span>+                            g: 25,
+</span><span>+                            b: 25
+</span><span>+                        }),
+</span><span>+                        pixel.0
+</span><span>+                    )
+</span></code></pre>
+<p>The change from <code>color::Fg</code> to <code>Colored::Fg</code> is straightforward enough I did most of these changes with search/replace.</p>
+<h1 id="gotchas">Gotchas</h1>
+<p>The translation is not without its own set of hiccups. The main one of which you get a hint at here:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>-    pub frame_buffer: Vec&lt;String&gt;,
+</span><span>+    pub frame_buffer: Vec&lt;(char, (u8, u8, u8))&gt;,
+</span></code></pre>
+<p>Originally, the whole framebuffer was turned into a vector of strings. On most Unix platforms, these would include the ANSI commands to change the color or move the cursor. It's a powerful tool, and being text-based, you can prebuffer the whole frame via string manipulation.</p>
+<p>Unfortunately, assuming everything is string-based doesn't work in Windows. When crossterm outputs using println!, it's calling into the Windows Console API between each piece of the println. This allows the same code to work, assuming it doesn't buffer the string.</p>
+<p>To work around this, I stopped buffering the string and instead stored the pixel value in the buffer. When it was time, I drew the whole frame using print! statements.</p>
+<p>When I first did this, it was noticeably slower than the termion version(roughly 5-10 fps). This is because calling into the Console API that often (once per character) is going to pull down performance. Luckily, I could work around this by just checking if we were already using the color I wanted to render. If we were, I didn't set the color again.</p>
+<p>Performance between the termion version and the crossterm version now look the same to me, which I call good enough :)</p>
+<h1 id="conclusion">Conclusion</h1>
+<p>We have a way to move more of our terminal apps to being crossplatform, so that they work out-of-the-box on Windows as well as Unix-based systems. It was fun to write the port, and I did the port in a couple hours without ever having used crossterm before.</p>
+<p>Also, big thanks to <a href="https://github.com/ecumene-software">Mitchell Hynes</a> for writing the original!</p>
+
+  </div>
+
+  <hr class="footer-rule" />
+
+  
+    <div class="footer-about">
+      <p>A simple dev-blog theme created by Bennett. You can follow him on <a href="https://github.com/bennetthardwick">Github</a> (if you like).</p>
+
+    </div>
+  
+
+  <div class="related-container">
+
+    
+
+    
+
+  </div>
+
+
+    </main>
+  </body>
+</html>

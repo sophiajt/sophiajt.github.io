@@ -10,7 +10,7 @@ The end result was a feeling of whiplash that I needed to recover from. After ta
 
 # Nushell
 
-Nushell has been a pride and joy for many years, though for many months I've very much been in the background while others led the project. After watching my friend Andreas [step down from Serenity](https://awesomekling.substack.com/p/forking-ladybird-and-stepping-down-serenityos), I knew it was time for me to do the same for Nushell.
+Nushell has been a pride and joy for many years, though for many months I've very much been in the background while others led the project. After watching my friend Andreas [step down from Serenity](https://awesomekling.substack.com/p/forking-ladybird-and-stepping-down-serenityos) (EDIT: please note, Andreas and I are no longer friends), I knew it was time for me to do the same for Nushell.
 
 Effective today, I'm no longer part of the Nushell administration team and have handed those responsibilities off to other members of the team.
 

@@ -28,7 +28,7 @@ In short, anyone who might remind the company it needed to have a conscience.
 
 Yet America has looked on for decades as it built these giants. Corporations, after all, are merely the offspring of the American dream, the product of the successes of capitalism. The line must go up, both legally and "morally", and so everyone salutes them. They invest in them and hope the windfall carries them into retirement. They work for them and help them grow, often as a means to survive.
 
-The separation of church and state felt like a noble effort. Keep those with one kind of power away from those with another kind of people. Corporations, America's real church, has managed to shrug off any such shackles to grab the reins of governance for themselves.
+The separation of church and state felt like a noble effort. Keep those with one kind of power away from those with another kind of power. Corporations, America's real church, has managed to shrug off any such shackles to grab the reins of governance for themselves.
 
 When I say that I stopped believing in America, it is that we are all watching this happen, but I don't think Americans will stand up against it. Will Americans support dissolving monopolies? Will they remove corporate interests from politics? Will they disallow billionaires from forming?
 

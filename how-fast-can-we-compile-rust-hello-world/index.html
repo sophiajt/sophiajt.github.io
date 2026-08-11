@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+
+    <style>
+      :root {
+        --accent-color: #05a081;
+        --accent-color-light: #82d0c0;
+      }
+    </style>
+
+    <meta name="theme-color" content="#05a081" />
+
+    
+      <link rel="icon" href="[object]" />
+      <link rel="apple-touch-icon" sizes="48x48" href="[object]" />
+      <link rel="apple-touch-icon" sizes="72x72" href="[object]" />
+      <link rel="apple-touch-icon" sizes="96x96" href="[object]" />
+      <link rel="apple-touch-icon" sizes="144x144" href="[object]" />
+      <link rel="apple-touch-icon" sizes="192x192" href="[object]" />
+      <link rel="apple-touch-icon" sizes="256x256" href="[object]" />
+      <link rel="apple-touch-icon" sizes="384x384" href="[object]" />
+      <link rel="apple-touch-icon" sizes="512x512" href="[object]" />
+    
+
+    
+
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary">
+
+    
+
+    
+
+    
+      
+        <meta name="description" content="" />
+        <meta name="twitter:description" content="">
+      
+    
+
+    
+      <meta name="twitter:title" content="How fast can we compile Rust hello world?">
+    
+
+    
+      <link rel="prerender" href="&#x2F;" rel="me" />
+    
+      <link rel="prerender" href="&#x2F;tags" rel="me" />
+    
+      <link rel="prerender" href="https:&#x2F;&#x2F;bsky.app&#x2F;profile&#x2F;sophiajt.com" rel="me" />
+    
+      <link rel="prerender" href="https:&#x2F;&#x2F;fedi.prismata.press&#x2F;@soph" rel="me" />
+    
+      <link rel="prerender" href="&#x2F;atom.xml" rel="me" />
+    
+      <link rel="prerender" href="&#x2F;poems&#x2F;waitingtogrow" rel="me" />
+    
+
+    <link rel="prefetch" href="[object]" />
+
+    <title>
+      
+        
+          How fast can we compile Rust hello world?
+        
+      
+    </title>
+
+    
+    
+      <link rel="stylesheet" href="https://www.sophiajt.com/main.css">
+    
+    
+  
+
+  
+
+  
+    <link rel="prerender"  href="https://www.sophiajt.com/tags/rust/">
+  
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "NewsArticle",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://google.com/article"
+      },
+      "headline": "How fast can we compile Rust hello world?",
+      "image": [],
+      "datePublished": "2018-05-03T00:00:00+00:00",
+      "dateModified": "2018-05-03T00:00:00+00:00",
+      "author": {
+        "@type": "Person",
+        "name": "Sophia June Turner"
+      },
+       "publisher": {
+        "@type": "Organization",
+        "name": "Sophia June Turner",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.sophiajt.com/icon.jpg"
+        }
+        
+      }
+      
+    }
+  </script>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        
+
+        
+        {
+          
+          "@type": "ListItem",
+          "position": 1,
+          "name": "",
+          "item": "https://www.sophiajt.com/"
+        },
+        
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "How fast can we compile Rust hello world?",
+          "item": "https://www.sophiajt.com/how-fast-can-we-compile-rust-hello-world/"
+        }
+      ]
+    }
+  </script>
+
+  </head>
+  <body>
+    
+      <header>
+        <a class="profile-icon" href="/">
+          <img src="/icon.jpg" alt="profile picture">
+        </a>
+        <nav>
+          
+            <a rel="me" href="&#x2F;">Home</a>
+          
+            <a rel="me" href="&#x2F;tags">Tags</a>
+          
+            <a rel="me" href="https:&#x2F;&#x2F;bsky.app&#x2F;profile&#x2F;sophiajt.com">Bluesky</a>
+          
+            <a rel="me" href="https:&#x2F;&#x2F;fedi.prismata.press&#x2F;@soph">Mastodon</a>
+          
+            <a rel="me" href="&#x2F;atom.xml">Atom&#x2F;RSS</a>
+          
+            <a rel="me" href="&#x2F;poems&#x2F;waitingtogrow">Poems</a>
+          
+        </nav>
+      </header>
+    
+    <main>
+    
+  <div class="post-title">
+    <h1>How fast can we compile Rust hello world?</h1>
+    <small>
+      May 03, 2018
+      
+        - 
+        <span class="tags">
+          
+            <a href="https://www.sophiajt.com/tags/rust/">rust</a>
+          
+        </span>
+      
+    </small>
+  </div>
+
+  <div>
+    <p>Seeing <a rel="external" href="https://blog.mozilla.org/nnethercote/2018/04/30/how-to-speed-up-the-rust-compiler-in-2018/">Nick Nethercote's blog post about speeding up the compiler</a>, I started wondering just how fast could a Rust compiler be? How fast could we compile a simple example? How fast can we compile a Rust hello world?</p>
+<h2 id="starting-out">Starting out</h2>
+<p>When you do a <code>cargo new hello_rust --bin</code>, you get a simple Rust hello world:</p>
+<pre><code data-lang="rust">fn main() {
+    println!(&quot;Hello, world!&quot;);
+}
+</code></pre>
+<p>Awesome. Let's see how long this takes to build:</p>
+<pre><code data-lang="term">&gt; time cargo build
+   Compiling hello_rust v0.1.0 (file:///home/sophia/Source/hello_rust)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.52 secs
+
+real     0m0.548s
+user     0m0.468s
+sys      0m0.080s
+</code></pre>
+<p>Half a second on my XPS 13 9360, with a i7-7500U @ 2.70GHz with 16 gigs of RAM. That seems, a bit long for a hello world. Maybe cargo is doing extra work?</p>
+<pre><code data-lang="term">&gt; time rustc src/main.rs
+
+real     0m0.378s
+user     0m0.289s
+sys      0m0.083s
+</code></pre>
+<p>That's definitely better. We're just over 1/3rd of a second.</p>
+<p>What should we expect? If only there were another language we could compile a hello world for that's comparable...</p>
+<pre><code data-lang="term">&gt; cat hello_c.c
+#include &lt;stdio.h&gt;
+
+int main() {
+    puts(&quot;Hello, from C!&quot;);
+    return 0;
+}
+&gt; time clang hello_c.c
+
+real     0m0.082s
+user     0m0.021s
+sys      0m0.041s
+</code></pre>
+<p>Woooaah! Wait a second. You're telling me that compiling C hello world is over 4.5x faster. That's... that's something. Maybe the compiler is doing a bit too much work for this small example? I mean, we don't need much from the standard library, just the println macro.</p>
+<p>You know, a reasonable person would probably stop here and walk away. Chalk it up to "Rust is more complicated" or "maybe if I knew the right commandline options"</p>
+<p>No, that's not us. Not today. Today, we're going to write our own Rust translator. We're going to see just how fast we can compile Rust to a working hello world.</p>
+<h2 id="first-stop-let-s-build-a-rust-c-translator">First stop: let's build a Rust-&gt;C translator.</h2>
+<p>Here's my thinking: if we write our own translator, we can translate the Rust to C ourselves, and then compile the C. That way, we should end up with a compile time close to the C.</p>
+<pre><code data-lang="term">&gt; cargo new rabbithole --bin
+</code></pre>
+<p>Writing a full compiler is complex work, but we're going for speed here. And speed means cutting corners. To that end, we're implementing <em>just enough</em> of a compiler to translate our Rust to C, then we're calling that good enough.</p>
+<p>First step, we need a parser. Luckily, there already is a crate that can parse Rust code for us.</p>
+<pre><code>[dependencies]
+syn = {version = &quot;0.13&quot;, features = [&quot;full&quot;, &quot;extra-traits&quot;] }
+</code></pre>
+<pre><code data-lang="rust">extern crate syn;
+
+use std::env;
+use std::fs::File;
+use std::io::Read;
+
+fn main() {
+    let mut args = env::args();
+    args.next();
+
+    match args.next() {
+        Some(fname) =&gt; {
+            let mut src = String::new();
+            let mut file = File::open(&amp;fname).expect(&quot;Unable to open file&quot;);
+            file.read_to_string(&amp;mut src).expect(&quot;Unable to read file&quot;);
+
+            let syntax = syn::parse_file(&amp;src).expect(&quot;Unable to parse file&quot;);
+            println!(&quot;{:#?}&quot;, syntax);
+        }
+        _ =&gt; {
+            println!(&quot;Please supply the file to compile&quot;);
+        }
+    }
+}
+</code></pre>
+<pre><code data-lang="term">&gt; cargo run -- hello.rs
+File {
+    shebang: None,
+    attrs: [],
+    items: [
+        Fn(
+            ItemFn {
+                attrs: [],
+                vis: Inherited,
+                constness: None,
+                unsafety: None,
+                abi: None,
+                ident: Ident {
+                    term: Term {
+                        sym: main
+                    }
+                },
+                decl: FnDecl {
+                    fn_token: Fn,
+                    generics: Generics {
+                        lt_token: None,
+                        params: [],
+                        gt_token: None,
+                        where_clause: None
+                    },
+                    paren_token: Paren,
+                    inputs: [],
+                    variadic: None,
+                    output: Default
+                },
+                block: Block {
+                    brace_token: Brace,
+                    stmts: [
+                        Item(
+                            Macro(
+                                ItemMacro {
+                                    attrs: [],
+                                    ident: None,
+                                    mac: Macro {
+                                        path: Path {
+                                            leading_colon: None,
+                                            segments: [
+                                                PathSegment {
+                                                    ident: Ident {
+                                                        term: Term {
+                                                            sym: println
+                                                        }
+                                                    },
+                                                    arguments: None
+                                                }
+                                            ]
+                                        },
+                                        bang_token: Bang,
+                                        delimiter: Paren(
+                                            Paren
+                                        ),
+                                        tts: TokenStream [
+                                            Literal {
+                                                lit: &quot;Hello, world!&quot;
+                                            }
+                                        ]
+                                    },
+                                    semi_token: Some(
+                                        Semi
+                                    )
+                                }
+                            )
+                        )
+                    ]
+                }
+            }
+        )
+    ]
+}
+</code></pre>
+<p>This might look a bit intimidating, so let's break it down. The top-most thing is a File.</p>
+<ul>
+<li>File</li>
+</ul>
+<p>Each File continues zero or more Items. An Item are things like declarations. Function declarations, for example, are one kind of Item.</p>
+<ul>
+<li>File
+<ul>
+<li>Item</li>
+</ul>
+</li>
+</ul>
+<p>Since this file has one function, it has one item, an ItemFn. This holds all the information about our main function. You can see in here that we have the function's declaration (sometimes called the function prototype, if you come from C). This tells us how many parameters it takes, what its return type is, etc. Luckily for us, this is all empty because main has nothing interesting here. This lets us focus on the body of the function, here called 'block'</p>
+<ul>
+<li>File
+<ul>
+<li>Item (ItemFn)
+<ul>
+<li>Block</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Blocks contain statements and expressions. This is really the meat of what actually <em>does</em> things, and which is where we'll actually spend our time writing the compiler. Let's take a closer look:</p>
+<pre><code>block: Block {
+    brace_token: Brace,
+    stmts: [
+        Item(
+            Macro(
+                ItemMacro {
+                    attrs: [],
+                    ident: None,
+                    mac: Macro {
+                        path: Path {
+                            leading_colon: None,
+                            segments: [
+                                PathSegment {
+                                    ident: Ident {
+                                        term: Term {
+                                            sym: println
+                                        }
+                                    },
+                                    arguments: None
+                                }
+                            ]
+                        },
+                        bang_token: Bang,
+                        delimiter: Paren(
+                            Paren
+                        ),
+                        tts: TokenStream [
+                            Literal {
+                                lit: &quot;Hello, world!&quot;
+                            }
+                        ]
+                    },
+                    semi_token: Some(
+                        Semi
+                    )
+                }
+            )
+        )
+    ]
+}
+</code></pre>
+<p>On closer inspection we see this block has only one statement. A something-something macro something or other. Oh right, println is a macro! Let's focus on just the macro invocation itself:</p>
+<pre><code>mac: Macro {
+    path: Path {
+        leading_colon: None,
+        segments: [
+            PathSegment {
+                ident: Ident {
+                    term: Term {
+                        sym: println
+                    }
+                },
+                arguments: None
+            }
+        ]
+    },
+    bang_token: Bang,
+    delimiter: Paren(
+        Paren
+    ),
+    tts: TokenStream [
+        Literal {
+            lit: &quot;Hello, world!&quot;
+        }
+    ]
+},
+</code></pre>
+<p>Now this is a little more like it. It's still a little cumbersome, but we can see the parts we need. There's a <code>sym</code> thing that says what the macro is. Later on, we can see the string that we're printing is a literal string. We can ignore the rest.</p>
+<p>That's it. Make sure it's invoking println, and then we'll look for the string that's being printed.</p>
+<p>To make things a little easier on ourselves, let's make a quick-and-dirty intermediate representation. This will only have one command so far, but it'll be an easy way to de-couple the function that does the parsing from the one that does the code generation.</p>
+<pre><code data-lang="rust">enum Command {
+    PrintLn(String)
+}
+</code></pre>
+<p>With that, we're ready to make our parser that can take in the <code>syn::File</code> and output our Command. There are a few ways we can do this, but to keep things pretty simple, I'm going to make a separate <code>parse</code> function for each layer we talked about earlier: File, Item, and Block. You can think of this as us unpacking the useful information from what <code>syn</code> gives us into much simpler data structures.</p>
+<pre><code data-lang="rust">extern crate syn;
+
+use std::env;
+use std::fs;
+use std::io::Read;
+
+#[derive(Debug)]
+struct File {
+    functions: Vec&lt;Function&gt;,
+}
+
+#[derive(Debug)]
+struct Function {
+    body: Vec&lt;Command&gt;,
+}
+
+#[derive(Debug)]
+enum Command {
+    PrintLn(String),
+}
+
+fn parse_body(body: &amp;syn::Block) -&gt; Result&lt;Vec&lt;Command&gt;, String&gt; {
+    let mut stmts = vec![];
+    for stmt in &amp;body.stmts {
+        match stmt {
+            syn::Stmt::Item(syn::Item::Macro(ref im)) =&gt; {
+                let macro_name = im.mac.path.segments[0].ident.as_ref();
+                if macro_name == &quot;println&quot; {
+                    match im.mac.tts.clone().into_iter().next() {
+                        Some(ref arg) =&gt; {
+                            stmts.push(Command::PrintLn(arg.to_string()));
+                        }
+                        None =&gt; return Err(&quot;Expected argument in function&quot;.into()),
+                    }
+                } else {
+                    return Err(format!(&quot;Unknown macro: {}&quot;, macro_name));
+                }
+            }
+            _ =&gt; return Err(&quot;Unexpected statement in function&quot;.into()),
+        }
+    }
+    Ok(stmts)
+}
+
+fn parse_fn(item: &amp;syn::ItemFn) -&gt; Result&lt;Function, String&gt; {
+    Ok(Function {
+        body: parse_body(&amp;item.block)?,
+    })
+}
+
+fn parse_file(file: &amp;syn::File) -&gt; Result&lt;File, String&gt; {
+    let mut functions = vec![];
+    for item in &amp;file.items {
+        match item {
+            syn::Item::Fn(ref item_fn) =&gt; {
+                functions.push(parse_fn(item_fn)?);
+            }
+            _ =&gt; return Err(&quot;Unexpected item in file&quot;.into()),
+        }
+    }
+    Ok(File { functions })
+}
+
+fn main() {
+    let mut args = env::args();
+    args.next();
+
+    match args.next() {
+        Some(fname) =&gt; {
+            let mut src = String::new();
+            let mut file = fs::File::open(&amp;fname).expect(&quot;Unable to open file&quot;);
+            file.read_to_string(&amp;mut src).expect(&quot;Unable to read file&quot;);
+
+            let syntax = syn::parse_file(&amp;src).expect(&quot;Unable to parse file&quot;);
+            let result = parse_file(&amp;syntax);
+
+            println!(&quot;{:#?}&quot;, result);
+        }
+        _ =&gt; {
+            println!(&quot;Please supply the file to compile&quot;);
+        }
+    }
+}
+</code></pre>
+<p>Which results in:</p>
+<pre><code data-lang="term">Ok(
+    File {
+        functions: [
+            Function {
+                body: [
+                    PrintLn(
+                        &quot;\&quot;Hello, world!\&quot;&quot;
+                    )
+                ]
+            }
+        ]
+    }
+)
+</code></pre>
+<p>That's much nicer! It took a little work reading the <code>syn</code> documentation, but once we got the hang of it, we can now work with real Rust source code and turn it into something we can use.</p>
+<p>Oh, before we go, let's clean one thing up. You might have noticed that extra set of quotes in the macro argument. No problem, we'll just turn:</p>
+<pre><code data-lang="rust">stmts.push(Command::PrintLn(arg.to_string()));
+</code></pre>
+<p>Into:</p>
+<pre><code data-lang="rust">stmts.push(Command::PrintLn(arg.to_string().replace(&quot;\&quot;&quot;, &quot;&quot;)));
+</code></pre>
+<p>Which gives us:</p>
+<pre><code data-lang="term">Ok(
+    File {
+        functions: [
+            Function {
+                body: [
+                    PrintLn(
+                        &quot;Hello, world!&quot;
+                    )
+                ]
+            }
+        ]
+    }
+)
+</code></pre>
+<p>Beautiful. Now that we have it in this form, we have a much simpler form that we can hand to the other half of the translator. In this half, we'll be outputting the C code and compiling it.</p>
+<p>Since we only care about one function in one file, let's just make a quick-and-dirty function to generate the C:</p>
+<pre><code data-lang="rust">fn compile_to_c(file: &amp;File) -&gt; String {
+    let mut c_output = String::new();
+
+    c_output += &quot;#include &lt;stdio.h&gt;\n&quot;;
+    c_output += &quot;int main() {\n&quot;;
+
+    for stmt in &amp;file.functions[0].body {
+        match stmt {
+            Command::PrintLn(ref msg) =&gt; {
+                c_output += &amp;format!(&quot;puts(\&quot;{}\&quot;);\n&quot;, msg);
+            }
+        }
+    }
+
+    c_output += &quot;}\n&quot;;
+    c_output
+}
+</code></pre>
+<p>That's it. Let's call it.</p>
+<pre><code data-lang="rust">println!(&quot;{}&quot;, compile_to_c(&amp;result.unwrap()));
+</code></pre>
+<p>Running it again, we get:</p>
+<pre><code data-lang="term">#include &lt;stdio.h&gt;
+int main() {
+puts(&quot;Hello, world!&quot;);
+}
+</code></pre>
+<p>Woah! That looks like C to me. Dare we try to compile it?</p>
+<pre><code data-lang="term">&gt; cargo run -- ../hello_rust/src/main.rs  &gt; testme.c
+&gt; clang testme.c
+&gt; ./a.out
+Hello, world!
+</code></pre>
+<p>It... works! We just made a compiler!</p>
+<pre><code data-lang="term">&gt; time ./target/release/rabbithole ../hello_rust/src/main.rs &gt; testme.c
+
+real    0m0.014s
+user    0m0.010s
+sys    0m0.004s
+&gt; time clang testme.c -o testme
+real    0m0.100s
+user    0m0.043s
+sys    0m0.041s
+</code></pre>
+<p>Nice, by cutting lots of corners and making our own translator, we got the compile times down from 0.378s to 0.114s, less than 1/3rd of where we were.</p>
+<p>Should we stop there? Surely we can go further down the rabbit hole. Oh right, C is not the lowest we can go</p>
+<h2 id="deeper-down-the-rabbit-hole">Deeper down the rabbit hole</h2>
+<p>Let's cook up some assembly. First, let's test how fast we can assemble a hello world in assembly.</p>
+<pre><code data-lang="term">&gt; cat hello_asm.s
+ .text
+ .global main
+main:
+ mov $hw_str, %rdi
+ call puts
+ mov $0, %rax
+ ret
+
+ .data
+hw_str:
+ .asciz &quot;hello asm&quot;
+&gt; time as hello_asm.s -o hello_asm.o
+real    0m0.019s
+user    0m0.008s
+sys    0m0.011s
+&gt; time ld -o hello -dynamic-linker /lib64/ld-linux-x86-64.so.2 /usr/lib/x86_64-linux-gnu/crt1.o /usr/lib/x86_64-linux-gnu/crti.o -lc hello_asm.o /usr/lib/x86_64-linux-gnu/crtn.o
+
+real    0m0.044s
+user    0m0.036s
+sys    0m0.008s
+</code></pre>
+<p>Wow, the assembly output cuts the compile almost in half! If you haven't seen x64 assembly before, that might look a little strange. Instead of working with C code with functions, we've dropped down much closer to the machine itself. The above represents the lowest we can go in Linux. Let's unpack what's happening:</p>
+<pre><code data-lang="asm"> .text
+ .global main
+</code></pre>
+<p>Our assembly file starts with two things. One, a section that we'll be talking about the code itself (.text) and then the one symbol we'll be making visible (main). This will be the main function that the linker will use later.</p>
+<p>Next, main begins:</p>
+<pre><code data-lang="asm">main:
+</code></pre>
+<p>What follows are series of assembly commands. The hardware keeps numbers and addresses in registers, similar to how you might store them in variables.</p>
+<pre><code data-lang="asm">mov $hw_str, %rdi
+call puts
+</code></pre>
+<p>With that in mind, this doesn't seem quite so bad. The first line is going to set up our register that we'll use as the argument to the puts function (here, in Linux, %rdi). After the argument is ready, we call puts.</p>
+<pre><code data-lang="asm"> mov $0, %rax
+ ret
+</code></pre>
+<p>After that, we return 0, just like we did in C. Here, in 64-bit assembly, we're returning the return value in %rax.</p>
+<p>That's it. Oh wait, one more thing. So this was the code section, we still haven't told it what the string is to print (which we called $hw_str earlier).</p>
+<pre><code data-lang="asm"> .data
+hw_str:
+ .asciz &quot;hello asm&quot;
+</code></pre>
+<p>That's not bad. We have a data section that contains our strings. We have one string, called <code>hw_str</code>, and we give it a null-terminated string to print.</p>
+<p>You may have been wondering about our linker line, too:</p>
+<pre><code data-lang="term">&gt; time ld -o hello -dynamic-linker /lib64/ld-linux-x86-64.so.2 /usr/lib/x86_64-linux-gnu/crt1.o /usr/lib/x86_64-linux-gnu/crti.o -lc hello_asm.o /usr/lib/x86_64-linux-gnu/crtn.o
+</code></pre>
+<p>This bit of magic is actually the kind of tasks that your C compiler does for you behind the scenes. In Linux, for a program to run, it needs to be able to access things like the Linux program loader, the C standard library, and the Linux subsystems. The above takes the barebones object file we made with the assembler and gives it all it needs to be a complete Linux executable.</p>
+<p>Before we write our assembly-outputting function, let's take a quick pause and talk about Windows. We've been giving a lot of examples for Linux, but you can do the same kinds of things in Windows. Make sure you have a 64-bit <a rel="external" href="https://www.nasm.us/">nasm</a> installed.</p>
+<pre><code data-lang="term">C:\Users\Sophia\source\fast_hello&gt;type nasm_hello.asm
+    global main
+    extern puts
+
+    section .text
+main:
+    push rbp
+    mov rbp, rsp
+    mov rcx, message
+    call puts
+    mov rax, 0
+    pop rbp
+    ret
+message:
+    db &#39;Hello, Rust!&#39;, 0
+C:\Users\Sophia\source\fast_hello&gt;nasm -f win64 nasm_hello.asm -g -o nasm_hello.obj
+
+C:\Users\Sophia\source\fast_hello&gt;link -out:b.exe -defaultlib:libcmt &quot;-libpath:C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\lib\\amd64&quot; &quot;-libpath:C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.15063.0\\ucrt\\x64&quot; &quot;-libpath:C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.15063.0\\um\\x64&quot; -nologo nasm_hello.obj
+</code></pre>
+<p>You can see that the assembly looks different, though it's similar. We do a little more setup, but the core of the work is the same. We set up where the string is, we send it to the <code>puts</code> function, and we return 0 via the <code>rax</code> register. Likewise, after we have an object file from the assembler, we have to do a similar dance with the linker in order to have a fully working Windows executable.</p>
+<p>With that, we can see all the techniques we're using in Linux can work in Windows, too.</p>
+<p>Okay, let's finish this up and see where we are. Just like we wrote a C output function, we're going to write an assembly output function. This function will create two strings: one for the code and one for the data, and then stitch them together.</p>
+<pre><code data-lang="rust">fn compile_to_asm(file: &amp;File) -&gt; String {
+    let mut asm_code_output = String::new();
+    let mut asm_data_output = String::new();
+
+    asm_data_output += &quot;.data\n&quot;;
+
+    asm_code_output += &quot;.text\n&quot;;
+    asm_code_output += &quot;.global main\n&quot;;
+    asm_code_output += &quot;main:\n&quot;;
+
+    let mut temp_num = 0;
+    for stmt in &amp;file.functions[0].body {
+        match stmt {
+            Command::PrintLn(ref msg) =&gt; {
+                asm_code_output += &amp;format!(&quot;mov $str_{}, %edi\n&quot;, temp_num);
+                asm_code_output += &quot;call puts\n&quot;;
+
+                asm_data_output += &amp;format!(&quot;str_{}:\n&quot;, temp_num);
+                asm_data_output += &amp;format!(&quot; .asciz \&quot;{}\&quot;&quot;, msg);
+                temp_num += 1;
+            }
+        }
+    }
+
+    asm_code_output + &amp;asm_data_output
+}
+</code></pre>
+<pre><code data-lang="term">&gt; time ./target/release/rabbithole ../hello_rust/src/main.rs &gt; hello_asm.s
+
+real    0m0.015s
+user    0m0.010s
+sys    0m0.005s
+&gt; time as hello_asm.s -o hello_asm.o
+real    0m0.022s
+user    0m0.009s
+sys    0m0.012s
+&gt; time ld -o hello -dynamic-linker /lib64/ld-linux-x86-64.so.2 /usr/lib/x86_64-linux-gnu/crt1.o /usr/lib/x86_64-linux-gnu/crti.o -lc hello_asm.o /usr/lib/x86_64-linux-gnu/crtn.o
+
+real    0m0.043s
+user    0m0.029s
+sys    0m0.011s
+</code></pre>
+<p>From 0.114s to 0.08s. We dropped another 30% off the compile time!</p>
+<p>To recap, we started at 0.548s with Cargo, then 0.378s with rustc, 0.114 going via C, and 0.08 going via assembly. Roughly a 6.8x speedup. Can we squeeze anything else out?</p>
+<p>You might be wondering about keeping more things in memory and getting a bit more caching. It's a good hunch, let's try it!</p>
+<pre><code data-lang="term">&gt; time (./target/release/rabbithole ../hello_rust/src/main.rs &gt; hello_asm.s &amp;&amp; as hello_asm.s -o hello_asm.o &amp;&amp; ld -o hello -dynamic-linker /lib64/ld-linux-x86-64.so.2 /usr/lib/x86_64-linux-gnu/crt1.o /usr/lib/x86_64-linux-gnu/crti.o -lc hello_asm.o /usr/lib/x86_64-linux-gnu/crtn.o)
+
+real    0m0.048s
+user    0m0.028s
+sys    0m0.021s
+</code></pre>
+<p>That's another 40% off the compile time. We've now gone from 0.548s to 0.048s, a whole 11x faster. There's even more we can do. For example, we can squeeze out more by writing our own parser, outputting the .o ourselves, and more. But we'll leave that as an exercise for the reader.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>I hope you had as much fun reading this post as I had in writing it. There are amazing benefits to all the features that cargo and rustc provide, and the Rust ecosystem builds on those benefits. At the same time, it's fun to play around with compiler technology and see that when we get down to it, it's just another Rust program that we can tune to our heart's content.</p>
+<p>You can see the <a rel="external" href="https://github.com/sophiajt/rabbithole">rabbithole source</a> if you want to play with it yourself.</p>
+
+  </div>
+
+  <hr class="footer-rule" />
+
+  
+    <div class="footer-about">
+      <p>A simple dev-blog theme created by Bennett. You can follow him on <a rel="external" href="https://github.com/bennetthardwick">Github</a> (if you like).</p>
+
+    </div>
+  
+
+  <div class="related-container">
+
+    
+
+    
+
+  </div>
+
+
+    </main>
+  </body>
+</html>
